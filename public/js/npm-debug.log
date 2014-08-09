@@ -1,0 +1,192 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'uglifycss',
+1 verbose cli   '-g' ]
+2 info using npm@1.3.4
+3 info using node@v0.11.5-pre
+4 verbose cache add [ 'uglifycss', null ]
+5 verbose cache add name=undefined spec="uglifycss" args=["uglifycss",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'uglifycss',
+6 verbose parsed url   path: 'uglifycss',
+6 verbose parsed url   href: 'uglifycss' }
+7 silly lockFile c9bd009c-uglifycss uglifycss
+8 verbose lock uglifycss /home/sandip/.npm/c9bd009c-uglifycss.lock
+9 silly lockFile c9bd009c-uglifycss uglifycss
+10 silly lockFile c9bd009c-uglifycss uglifycss
+11 verbose addNamed [ 'uglifycss', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 6d9a3280-uglifycss uglifycss@
+14 verbose lock uglifycss@ /home/sandip/.npm/6d9a3280-uglifycss.lock
+15 silly addNameRange { name: 'uglifycss', range: '*', hasData: false }
+16 verbose url raw uglifycss
+17 verbose url resolving [ 'https://registry.npmjs.org/', './uglifycss' ]
+18 verbose url resolved https://registry.npmjs.org/uglifycss
+19 info trying registry request attempt 1 at 22:24:53
+20 http GET https://registry.npmjs.org/uglifycss
+21 http 200 https://registry.npmjs.org/uglifycss
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Sun, 27 Jul 2014 16:54:54 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly registry.get     etag: '"15SJIOFC66OJ3BS2I9K4TBFU0"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=60',
+22 silly registry.get     'content-length': '8294',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     'x-served-by': 'cache-lax1423-LAX',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1406480094.665165,VS0,VE174',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'uglifycss', range: '*', hasData: true }
+24 silly addNameRange versions [ 'uglifycss',
+24 silly addNameRange   [ '0.0.3', '0.0.4', '0.0.5', '0.0.7', '0.0.8', '0.0.9' ] ]
+25 verbose addNamed [ 'uglifycss', '0.0.9' ]
+26 verbose addNamed [ '0.0.9', '0.0.9' ]
+27 silly lockFile ec019575-uglifycss-0-0-9 uglifycss@0.0.9
+28 verbose lock uglifycss@0.0.9 /home/sandip/.npm/ec019575-uglifycss-0-0-9.lock
+29 silly lockFile 1c3fe7d1-rg-uglifycss-uglifycss-0-0-9-tgz https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz
+30 verbose lock https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz /home/sandip/.npm/1c3fe7d1-rg-uglifycss-uglifycss-0-0-9-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz',
+31 verbose addRemoteTarball   'c9cda1de22c058f69afa68f496a714c25817dfa5' ]
+32 info retry fetch attempt 1 at 22:24:55
+33 verbose fetch to= /home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/tmp.tgz
+34 http GET https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz
+35 http 200 https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz
+36 verbose tar unpack /home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/tmp.tgz
+37 silly lockFile e9071ac1-95017-0-9960917315911502-package tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package
+38 verbose lock tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package /home/sandip/.npm/e9071ac1-95017-0-9960917315911502-package.lock
+39 silly lockFile a0f09f86-95017-0-9960917315911502-tmp-tgz tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/tmp.tgz
+40 verbose lock tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/tmp.tgz /home/sandip/.npm/a0f09f86-95017-0-9960917315911502-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+44 silly gunzTarPerm extractEntry README.md
+45 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+46 silly gunzTarPerm extractEntry index.js
+47 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+48 silly gunzTarPerm extractEntry test.js
+49 silly gunzTarPerm modified mode [ 'test.js', 436, 420 ]
+50 silly gunzTarPerm extractEntry tests.yui.js
+51 silly gunzTarPerm modified mode [ 'tests.yui.js', 436, 420 ]
+52 silly gunzTarPerm extractEntry uglifycss-lib.js
+53 silly gunzTarPerm modified mode [ 'uglifycss-lib.js', 436, 420 ]
+54 silly gunzTarPerm extractEntry uglifycss
+55 silly gunzTarPerm modified mode [ 'uglifycss', 509, 493 ]
+56 silly lockFile e9071ac1-95017-0-9960917315911502-package tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package
+57 silly lockFile e9071ac1-95017-0-9960917315911502-package tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package
+58 silly lockFile a0f09f86-95017-0-9960917315911502-tmp-tgz tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/tmp.tgz
+59 silly lockFile a0f09f86-95017-0-9960917315911502-tmp-tgz tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/tmp.tgz
+60 verbose tar pack [ '/home/sandip/.npm/uglifycss/0.0.9/package.tgz',
+60 verbose tar pack   '/home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package' ]
+61 verbose tarball /home/sandip/.npm/uglifycss/0.0.9/package.tgz
+62 verbose folder /home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package
+63 silly lockFile e9071ac1-95017-0-9960917315911502-package tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package
+64 verbose lock tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package /home/sandip/.npm/e9071ac1-95017-0-9960917315911502-package.lock
+65 silly lockFile 9da7f891--npm-uglifycss-0-0-9-package-tgz tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz
+66 verbose lock tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz /home/sandip/.npm/9da7f891--npm-uglifycss-0-0-9-package-tgz.lock
+67 silly lockFile e9071ac1-95017-0-9960917315911502-package tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package
+68 silly lockFile e9071ac1-95017-0-9960917315911502-package tar:///home/sandip/tmp/npm-3721-wB-k6QYJ/1406480095017-0.9960917315911502/package
+69 silly lockFile 9da7f891--npm-uglifycss-0-0-9-package-tgz tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz
+70 silly lockFile 9da7f891--npm-uglifycss-0-0-9-package-tgz tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz
+71 silly lockFile 61d55cc9-ndip-npm-uglifycss-0-0-9-package /home/sandip/.npm/uglifycss/0.0.9/package
+72 verbose lock /home/sandip/.npm/uglifycss/0.0.9/package /home/sandip/.npm/61d55cc9-ndip-npm-uglifycss-0-0-9-package.lock
+73 silly lockFile 61d55cc9-ndip-npm-uglifycss-0-0-9-package /home/sandip/.npm/uglifycss/0.0.9/package
+74 silly lockFile 61d55cc9-ndip-npm-uglifycss-0-0-9-package /home/sandip/.npm/uglifycss/0.0.9/package
+75 verbose tar unpack /home/sandip/.npm/uglifycss/0.0.9/package.tgz
+76 silly lockFile 30221673-ndip-npm-uglifycss-0-0-9-package tar:///home/sandip/.npm/uglifycss/0.0.9/package
+77 verbose lock tar:///home/sandip/.npm/uglifycss/0.0.9/package /home/sandip/.npm/30221673-ndip-npm-uglifycss-0-0-9-package.lock
+78 silly lockFile 9da7f891--npm-uglifycss-0-0-9-package-tgz tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz
+79 verbose lock tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz /home/sandip/.npm/9da7f891--npm-uglifycss-0-0-9-package-tgz.lock
+80 silly gunzTarPerm modes [ '755', '644' ]
+81 silly gunzTarPerm extractEntry package.json
+82 silly gunzTarPerm extractEntry README.md
+83 silly gunzTarPerm extractEntry index.js
+84 silly gunzTarPerm extractEntry test.js
+85 silly gunzTarPerm extractEntry tests.yui.js
+86 silly gunzTarPerm extractEntry uglifycss-lib.js
+87 silly gunzTarPerm extractEntry uglifycss
+88 silly lockFile 30221673-ndip-npm-uglifycss-0-0-9-package tar:///home/sandip/.npm/uglifycss/0.0.9/package
+89 silly lockFile 30221673-ndip-npm-uglifycss-0-0-9-package tar:///home/sandip/.npm/uglifycss/0.0.9/package
+90 silly lockFile 9da7f891--npm-uglifycss-0-0-9-package-tgz tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz
+91 silly lockFile 9da7f891--npm-uglifycss-0-0-9-package-tgz tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz
+92 verbose chmod /home/sandip/.npm/uglifycss/0.0.9/package.tgz 644
+93 verbose chown /home/sandip/.npm/uglifycss/0.0.9/package.tgz [ 1000, 1000 ]
+94 silly lockFile 1c3fe7d1-rg-uglifycss-uglifycss-0-0-9-tgz https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz
+95 silly lockFile 1c3fe7d1-rg-uglifycss-uglifycss-0-0-9-tgz https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz
+96 silly lockFile ec019575-uglifycss-0-0-9 uglifycss@0.0.9
+97 silly lockFile ec019575-uglifycss-0-0-9 uglifycss@0.0.9
+98 silly lockFile 6d9a3280-uglifycss uglifycss@
+99 silly lockFile 6d9a3280-uglifycss uglifycss@
+100 silly resolved [ { author:
+100 silly resolved      { name: 'Franck Marcia',
+100 silly resolved        email: 'franck.marcia@gmail.com',
+100 silly resolved        url: 'https://github.com/fmarcia' },
+100 silly resolved     name: 'uglifycss',
+100 silly resolved     description: 'Port of YUI CSS Compressor to NodeJS',
+100 silly resolved     version: '0.0.9',
+100 silly resolved     license: 'MIT',
+100 silly resolved     homepage: 'https://github.com/fmarcia/UglifyCSS',
+100 silly resolved     repository: { type: 'git', url: 'git://github.com/fmarcia/UglifyCSS.git' },
+100 silly resolved     main: './index.js',
+100 silly resolved     bin: { uglifycss: './uglifycss' },
+100 silly resolved     readme: 'UglifyCSS is a port of [YUI Compressor](https://github.com/yui/yuicompressor) to [NodeJS](http://nodejs.org) for its CSS part. Its name is a reference to the awesome [UglifyJS](https://github.com/mishoo/UglifyJS) but UglifyCSS is not a CSS parser. Like YUI CSS Compressor, it applies many regexp replacements. Note that a [port to JavaScript](https://github.com/yui/ycssmin) is also available in the YUI Compressor repository.\n\nUglifyCSS passes successfully the test suite of YUI compressor CSS.\n\n### Installation\n\nFor a command line usage:\n```sh\n$ npm install uglifycss -g\n```\n\nFor API usage:\n```sh\n$ npm install uglifycss\n```\n\nFrom Github:\n```sh\n$ git clone git://github.com/fmarcia/UglifyCSS.git\n```\n\n### Command line\n\n```sh\n$ uglifycss [options] [filename] [...] > output\n```\n\nOptions:\n\n* `--max-line-len n` adds a newline (approx.) every `n` characters; `0` means no newline and is the default value\n* `--expand-vars` expands variables; by default, `@variables` blocks are preserved and `var(x)`s are not expanded\n* `--ugly-comments` removes newlines within preserved comments; by default, newlines are preserved\n* `--cute-comments` preserves newlines within and around preserved comments\n\nIf no file name is specified, input is read from stdin.\n\n### API\n\n2 functions are provided:\n\n* `processString( content, options )` to process a given string\n* `processFiles( [ filename1, ... ], options )` to process the concatenation of given files\n\nOptions are identical to the command line:\n* `<int> maxLineLen` for `--max-line-len n`\n* `<bool> expandVars` for `--expand-vars`\n* `<bool> uglyComments` for `--ugly-comments`\n* `<bool> cuteComments` for `--cute-comments`\n\nBoth functions return uglified css.\n\n#### Example\n\n```js\nvar uglifycss = require(\'uglifycss\');\n\nvar uglified = uglifycss.processFiles(\n    [ \'file1\', \'file2\' ],\n    { maxLineLen: 500, expandVars: true }\n);\n\nconsole.log(uglified);\n```\n\nSee also [test.js](https://github.com/fmarcia/UglifyCSS/blob/master/test.js).\n\n### License\n\nUglifyCSS is MIT licensed.\n',
+100 silly resolved     readmeFilename: 'README.md',
+100 silly resolved     bugs: { url: 'https://github.com/fmarcia/UglifyCSS/issues' },
+100 silly resolved     _id: 'uglifycss@0.0.9',
+100 silly resolved     dist: { shasum: 'b7eb90eb0b535454fa7c58e95c940210edd3b6aa' },
+100 silly resolved     _from: 'uglifycss@',
+100 silly resolved     _resolved: 'https://registry.npmjs.org/uglifycss/-/uglifycss-0.0.9.tgz' } ]
+101 info install uglifycss@0.0.9 into /usr/local/lib
+102 info installOne uglifycss@0.0.9
+103 info /usr/local/lib/node_modules/uglifycss unbuild
+104 verbose tar unpack /home/sandip/.npm/uglifycss/0.0.9/package.tgz
+105 silly lockFile 225ab84a-local-lib-node-modules-uglifycss tar:///usr/local/lib/node_modules/uglifycss
+106 verbose lock tar:///usr/local/lib/node_modules/uglifycss /home/sandip/.npm/225ab84a-local-lib-node-modules-uglifycss.lock
+107 silly lockFile 9da7f891--npm-uglifycss-0-0-9-package-tgz tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz
+108 verbose lock tar:///home/sandip/.npm/uglifycss/0.0.9/package.tgz /home/sandip/.npm/9da7f891--npm-uglifycss-0-0-9-package-tgz.lock
+109 silly gunzTarPerm modes [ '755', '644' ]
+110 error Error: EACCES, mkdir '/usr/local/lib/node_modules/uglifycss'
+110 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/uglifycss']
+110 error   stack: 'Error: EACCES, mkdir \'/usr/local/lib/node_modules/uglifycss\'',
+110 error   errno: -13,
+110 error   code: 'EACCES',
+110 error   path: '/usr/local/lib/node_modules/uglifycss',
+110 error   fstream_type: 'Directory',
+110 error   fstream_path: '/usr/local/lib/node_modules/uglifycss',
+110 error   fstream_class: 'DirWriter',
+110 error   fstream_stack:
+110 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+110 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+110 error      'Object.oncomplete (fs.js:96:15)' ] }
+111 error Please try running this command again as root/Administrator.
+112 error System Linux 3.13.0-32-generic
+113 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "uglifycss" "-g"
+114 error cwd /var/www/html/laravelBugTracker/public/js
+115 error node -v v0.11.5-pre
+116 error npm -v 1.3.4
+117 error path /usr/local/lib/node_modules/uglifycss
+118 error fstream_path /usr/local/lib/node_modules/uglifycss
+119 error fstream_type Directory
+120 error fstream_class DirWriter
+121 error code EACCES
+122 error errno -13
+123 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/uglifycss'
+124 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+124 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+124 error fstream_stack Object.oncomplete (fs.js:96:15)
+125 verbose exit [ -13, true ]

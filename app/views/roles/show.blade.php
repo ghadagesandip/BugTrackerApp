@@ -1,0 +1,1 @@
+/var/www/laravelBugTracker/app/views/roles/show.blade.php

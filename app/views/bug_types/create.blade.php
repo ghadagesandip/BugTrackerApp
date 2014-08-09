@@ -1,0 +1,1 @@
+/var/www/laravelBugTracker/app/views/bug_types/create.blade.php

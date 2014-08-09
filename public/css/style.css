@@ -1,0 +1,28 @@
+#menu-panel{
+    display: none;
+    background: #000000;
+    min-width: 10px;
+    min-height: 100px;
+    position: absolute;
+    top: 38px;
+    left: 13px;
+    z-index: 100;
+}
+#menu-panel > ul{background: red;}
+#menu-panel > ul > li{
+    list-style: none;
+    float: left;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: gray;
+    margin: 15px;
+    position: relative;
+}
+#menu-panel > ul > li > a{
+    position: absolute;
+    top: 38px;
+    color: white;
+    font-weight: bolder;
+    left: 28px;
+}
