@@ -4,9 +4,15 @@ class RolesController extends \BaseController {
 
     protected $role;
 
+
+
+
     public function __construct(Role $role){
+
         $this->role= $role;
         parent::__construct();
+        $this->beforeFilter('auth',array('except'=>array('getRolesList','getRole','savePost')));
+
     }
 
 
@@ -40,17 +46,17 @@ class RolesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Role::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		Role::create($data);
-
-		return Redirect::route('roles.index');
+		if(!$this->role->fill(Input::all())->isValid()){
+            Session::flash('message','Validation error occured while adding role');
+            return Redirect::back()->withInput()->withErrors($this->user->errors);
+        }else{
+            $this->role->save();
+            Session::flash('message','Role added successfully');
+            return Redirect::route('roles.index');
+        }
 	}
+
+
 
 	/**
 	 * Display the specified role.
@@ -113,4 +119,37 @@ class RolesController extends \BaseController {
 		return Redirect::route('roles.index');
 	}
 
+
+
+    public function getRolesList(){
+        $roles =  $this->role->all();
+        //echo '<pre>'; print_r($roles->toArray());exit;
+        return Response::json($roles);
+    }
+
+
+
+    public function getRole($id){
+        $role =$this->role->find($id);
+        return Response::json($role);
+    }
+
+    public function addPost(){
+
+    }
+
+
+
+    public function savePost(){
+        if(!$this->role->fill(Input::all())->isValid()){
+             return Response::json(array('error'=>'Validation error occured','success'=>false));
+        }else{
+            if($this->role->save()){
+                return Response::json(array('error'=>'Role added succesfully','success'=>true));
+            }else{
+                return Response::json(array('error'=>'Error occured while saving','success'=>false));
+            }
+
+        }
+    }
 }

@@ -27,3 +27,10 @@ Route::resource('bug-types', 'BugTypesController');
 Route::resource('bug_statuses', 'BugStatusesController');
 Route::get('register','UsersController@register');
 Route::get('dashboard','UsersController@dashboard');
+
+
+Route::get('/getRolesList','RolesController@getRolesList');
+Route::get('/getRole/{id}','RolesController@getRole');
+Route::post('savePost','RolesController@savePost');
+
+Route::get('getUsers','UsersController@getUsers');

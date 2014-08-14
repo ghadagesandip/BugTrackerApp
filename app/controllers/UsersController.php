@@ -9,6 +9,7 @@ class UsersController extends \BaseController{
     public function __construct(User $user){
         parent::__construct();
         $this->user = $user;
+        $this->beforeFilter('auth',array('except' => array('login','authenticate','getUsers')));
     }
 
 
@@ -17,6 +18,11 @@ class UsersController extends \BaseController{
     }
 
 
+
+    public function getUsers(){
+        $users  = User::with('role')->get();
+        return Response::json($users);
+    }
 
     public function register(){
         $roles = Role::getRoleList();
