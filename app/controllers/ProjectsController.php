@@ -24,7 +24,7 @@ class ProjectsController extends \BaseController {
 	public function index()
 	{
 
-        $title='Test';
+        $this->layout->title='Projects';
 		$projects = $this->project->with('user')->paginate();
         $this->layout->content = View::make('projects.index', compact('projects','title'));
 	}
@@ -40,7 +40,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function create()
 	{
-
+        $this->layout->title ='Add Project';
 		$this->layout->content = View::make('projects.create');
 	}
 
@@ -80,9 +80,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+        $this->layout->title = 'View Project';
 		$project = $this->project->with('user')->findOrFail($id);
-        //echo '<pre>'; print_r($project->toArray());exit;
-		return View::make('projects.show', compact('project'));
+        //echo '<pre>'; print_r($project->toArray()); exit;
+        $this->layout->content = View::make('projects.show', compact('project'));
 	}
 
 
@@ -99,8 +100,7 @@ class ProjectsController extends \BaseController {
 	public function edit($id)
 	{
 		$project = $this->project->find($id);
-        //echo '<pre>'; print_r($project->toArray());exit;
-		$this->layout->content=  View::make('projects.edit', compact('project'));
+        $this->layout->content=  View::make('projects.edit', compact('project'));
 	}
 
 
@@ -139,9 +139,9 @@ class ProjectsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-        Session::flash('message','Deleted Project');
+        Session::flash('message',' Project Deleted');
         $this->project->destroy($id);
-		return Redirect::route('projects.index');
+		return Redirect::back();
 	}
 
 

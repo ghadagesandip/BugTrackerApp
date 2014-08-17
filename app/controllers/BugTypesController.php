@@ -4,11 +4,11 @@ class BugTypesController extends \BaseController {
 
     public $layout = 'layouts.default';
 
-    protected $bugTpe;
+    protected $bugType;
 
     public function __construct(BugType $bugType){
         parent::__construct();
-        $this->bugTpe=$bugType;
+        $this->bugType=$bugType;
     }
 
 	/**
@@ -19,9 +19,13 @@ class BugTypesController extends \BaseController {
 	public function index()
 	{
 
-		$bugtypes = $this->bugTpe->all();
+		$bugtypes = $this->bugType->paginate();
+        //echo '<pre>'; print_r($bugtypes->toArray()); exit;
 		$this->layout->content =  View::make('bug_types.index', compact('bugtypes'));
 	}
+
+
+
 
 	/**
 	 * Show the form for creating a new bugtype
@@ -30,8 +34,13 @@ class BugTypesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('bugtypes.create');
+
+		$this->layout->content = View::make('bug_types.create');
 	}
+
+
+
+
 
 	/**
 	 * Store a newly created bugtype in storage.
@@ -52,6 +61,9 @@ class BugTypesController extends \BaseController {
 		return Redirect::route('bugtypes.index');
 	}
 
+
+
+
 	/**
 	 * Display the specified bugtype.
 	 *
@@ -60,9 +72,8 @@ class BugTypesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$bugtype = Bugtype::findOrFail($id);
-
-		return View::make('bugtypes.show', compact('bugtype'));
+		$bugtype = $this->bugType->findOrFail($id);
+        $this->layout->content =  View::make('bug_types.show', compact('bugtype'));
 	}
 
 	/**

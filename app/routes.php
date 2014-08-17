@@ -20,7 +20,7 @@ Route::resource('roles', 'RolesController');
 Route::resource('users', 'UsersController');
 Route::resource('projects', 'ProjectsController');
 Route::resource('bug-types', 'BugTypesController');
-Route::resource('bug_statuses', 'BugStatusesController');
+Route::resource('bug-statuses', 'BugStatusesController');
 Route::get('register','UsersController@register');
 Route::get('dashboard','UsersController@dashboard');
 

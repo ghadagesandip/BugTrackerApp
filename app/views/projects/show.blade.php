@@ -1,5 +1,3 @@
-<?php //echo "<pre>"; print_r($project->toArray()); exit;?>
-@extends('layouts.default')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -24,7 +22,7 @@
             <dd>{{ $project->is_active }}</dd>
 
             <dt>Created By</dt>
-            <dd></dd>
+            <dd>{{{$project->user->first_name or 'Not available'}}}</dd>
 
             <dt>Created On</dt>
             <dd> {{ $project->created_at }}</dd>

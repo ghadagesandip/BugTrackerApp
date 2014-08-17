@@ -3,19 +3,20 @@
 class Project extends \Eloquent {
 
 	// Add your validation rules here
-	public static $rules = [
-		 'name' => 'required'
-	];
+	protected function  rules($id){
+          return [
+              'name' => 'required|unique:projects,name,'.$id
+          ];
+    }
 
 	// Don't forget to fill this array
 	protected $fillable = ['name'];
 
     public $errors;
 
+    public function isValid($id=null){
 
-    public function isValid(){
-
-        $validation = Validator::make($this->attributes,static :: $rules);
+        $validation = Validator::make($this->attributes,$this->rules($id));
         if($validation->passes()) return true;
 
         $this->errors = $validation->messages();

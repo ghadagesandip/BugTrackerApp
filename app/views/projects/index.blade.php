@@ -36,8 +36,8 @@
             <tr>
                 <td>{{ $project->id }}</td>
                 <td>{{ $project->name}}</td>
-                <td>{{{$project->user->first_name or 'not-exist'}}}</td>
-                <td>{{ $project->is_active}}</td>
+                <td>{{{$project->user->first_name or 'Not available'}}}</td>
+                <td>@if($project->is_active==1) Yes @else No @endif</td>
                 <td>{{ $project->logo}}</td>
                 <td>
                     {{ Form::open(array('url' => 'projects/' . $project->id, 'class' => 'pull-right')) }}
