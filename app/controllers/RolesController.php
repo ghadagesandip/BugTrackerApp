@@ -4,9 +4,6 @@ class RolesController extends \BaseController {
 
     protected $role;
 
-
-
-
     public function __construct(Role $role){
 
         $this->role= $role;
@@ -36,7 +33,8 @@ class RolesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('roles.create');
+        $this->layout->title="New Role";
+		$this->layout->content = View::make('roles.create');
 	}
 
 	/**
@@ -46,9 +44,10 @@ class RolesController extends \BaseController {
 	 */
 	public function store()
 	{
-		if(!$this->role->fill(Input::all())->isValid()){
+
+		if(!$this->role->fill(Input::all())->isValid(null)){
             Session::flash('message','Validation error occured while adding role');
-            return Redirect::back()->withInput()->withErrors($this->user->errors);
+            return Redirect::back()->withInput()->withErrors($this->role->errors);
         }else{
             $this->role->save();
             Session::flash('message','Role added successfully');
@@ -67,8 +66,8 @@ class RolesController extends \BaseController {
 	public function show($id)
 	{
 		$role = Role::findOrFail($id);
-
-		return View::make('roles.show', compact('role'));
+        $this->layout->title = 'Add Role';
+		$this->layout->content  = View::make('roles.show', compact('role'));
 	}
 
 	/**
@@ -80,9 +79,12 @@ class RolesController extends \BaseController {
 	public function edit($id)
 	{
 		$role = Role::find($id);
-
-		return View::make('roles.edit', compact('role'));
+        $this->layout->title="Update Role";
+		$this->layout->content =  View::make('roles.edit', compact('role'));
 	}
+
+
+
 
 	/**
 	 * Update the specified role in storage.
@@ -92,16 +94,13 @@ class RolesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$role = Role::findOrFail($id);
-
-		$validator = Validator::make($data = Input::all(), Role::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		$role->update($data);
+		if(!$this->role->fill(Input::all())->isValid($id)){
+            Session::flash('message','Validation error occured');
+            return Redirect::back()->withInput()->withErrors($this->role->errors);
+        }else{
+            Session::flash('message','Role updated');
+            return Redirect::to('roles');
+        }
 
 		return Redirect::route('roles.index');
 	}
@@ -115,7 +114,7 @@ class RolesController extends \BaseController {
 	public function destroy($id)
 	{
 		Role::destroy($id);
-
+        Session::flash('message','Role deleted');
 		return Redirect::route('roles.index');
 	}
 

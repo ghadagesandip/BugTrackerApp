@@ -8,14 +8,16 @@ class Role extends \Eloquent {
 
     public $errors;
 
-    public static $rules = [
-        'name'=>'required'
-    ];
+    protected  function rules($id){
+        return [
+            'name'=>'required|min:3|unique:roles,name,'.$id
+       ];
+}
 
 
-    public function isValid(){
-        $validator = Validator::make($this->attributes,static::$rules);
-        if($validator->passes()); return true;
+    public function isValid($id=null){
+        $validator = Validator::make($this->attributes,$this->rules($id));
+        if($validator->passes()) return true;
 
         $this->errors = $validator->messages();
         return false;
@@ -23,7 +25,7 @@ class Role extends \Eloquent {
     }
 
     public function users(){
-        $this->hasMany('User');
+     return $this->hasMany('User');
     }
 
 

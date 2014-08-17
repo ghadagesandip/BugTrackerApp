@@ -12,20 +12,19 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h1>Project</h1>
-        <!-- will be used to show any messages -->
+        <h1>Project <a class="btn btn-small btn-success" href="{{ URL::to('projects/create') }}"><span class="glyphicon glyphicon-plus"></span> Add Project</a></h1>
+
         @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
 
-        <a class="btn btn-small btn-success" href="{{ URL::to('projects/create') }}"><span class="glyphicon glyphicon-plus"></span>
-            Add Project</a>
+
         <table class="table table-striped table-bordered">
             <thead>
             <tr>
                 <td>Id</td>
                 <td>Name</td>
-                <td>Created></td>
+                <td>Created</td>
                 <td>Active</td>
                 <td>Logo</td>
 
@@ -37,7 +36,7 @@
             <tr>
                 <td>{{ $project->id }}</td>
                 <td>{{ $project->name}}</td>
-
+                <td>{{{$project->user->first_name or 'not-exist'}}}</td>
                 <td>{{ $project->is_active}}</td>
                 <td>{{ $project->logo}}</td>
                 <td>

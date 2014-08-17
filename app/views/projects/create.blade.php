@@ -14,7 +14,7 @@
         <div class="col-md-12">
             <h1>Projects</h1>
             @if(Session::has('message'))
-            <div class="alert alert-info">{{Session::get('message')}}</div>
+            <div class="alert alert-danger">{{Session::get('message')}}</div>
             @endif
 
             {{Form::open(array('url'=>'projects','class'=>'form-horizontal')) }}
@@ -37,7 +37,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-sm-4">
+                <div class="col-sm-offset-2">
                     {{Form::submit('Submit',array('class'=>'btn btn-primary'))}}
                     <a class="btn" href="{{URL::to('projects')}}">Cancel</a>
                 </div>

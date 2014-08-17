@@ -2,8 +2,10 @@
 
 class BaseController extends Controller {
 
+    protected  $title = null;
     public function __construct(){
-        View::share('title',Route::currentRouteName());
+            $this->title = Route::currentRouteName();
+            View::share('title',$this->title);
     }
 	/**
 	 * Setup the layout used by the controller.

@@ -27,20 +27,24 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public $errors;
 
-    public static  $rules = [
-        'role_id'=>'required',
-        'first_name'=>'required|alpha',
-        'last_name'=>'required|alpha',
-        'username'=>'required|alpha_dash|unique:users',
-        'password'=>'sometimes|required|between:6,18|confirmed',
-        'password_confirmation'=>'sometimes|required',
-        'email'=>'required|email|unique:users'
-    ];
+
+
+    protected function rules($id=null){
+        return [
+            'role_id'=>'required',
+            'first_name'=>'required|alpha',
+            'last_name'=>'required|alpha',
+            'username'=>'sometimes|required|alpha_dash|unique:users',
+            'password'=>'sometimes|required|between:6,18|confirmed',
+            'password_confirmation'=>'sometimes|required',
+            'email'=>'required|unique:users,email,'.$id
+        ];
+    }
 
 
 
-    public function isValid(){
-        $validation = Validator::make($this->attributes,static :: $rules);
+    public function isValid($id=null){
+        $validation = Validator::make($this->attributes,$this->rules($id));
         if($validation->passes()) return true;
 
         $this->errors = $validation->messages();

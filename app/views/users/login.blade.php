@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="row-fluid">
-    {{Form::open(array('url'=>'authenticate','class'=>'form-signin'))}}
+    {{Form::open(array('url'=>'authenticate','class'=>'form-horizontal'))}}
         @if(Session::has('message'))
         <div class="alert alert-danger">{{Session::get('message')}}</div>
         @endif
@@ -11,15 +11,28 @@
         <div class="alert alert-success">{{Session::get('success-message')}}</div>
         @endif
 
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="username" autofocus="" name="username" required="" placeholder="Email address or username" class="form-control">
-        <input type="password" required="" name="password" placeholder="Password" class="form-control">
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+        <h2 class="form-signin-heading col-sm-offset-1">Please sign in</h2>
+
+        <div class="form-group">
+            {{Form::label('username','Username',array('class'=>'control-label col-sm-2'))}}
+            <div class="col-sm-4">
+                {{Form::text('username',Input::old('username'),array('class'=>'form-control'))}}
+            </div>
         </div>
-        <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+
+        <div class="form-group">
+            {{Form::label('password','Password',array('class'=>'control-label col-sm-2'))}}
+            <div class="col-sm-4">
+                {{Form::password('password',array('class'=>'form-control'))}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-3 control-label">
+                {{Form::submit('Login',array('class'=>'btn btn-primary'))}}
+            </div>
+        </div>
+
     {{Form::close()}}
 <div>
 @stop

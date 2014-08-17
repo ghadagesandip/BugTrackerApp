@@ -14,6 +14,7 @@ class UsersController extends \BaseController{
 
 
     public function login(){
+        $this->title =" Login";
         return View::make('users.login');
     }
 
@@ -24,10 +25,14 @@ class UsersController extends \BaseController{
         return Response::json($users);
     }
 
+
+
     public function register(){
         $roles = Role::getRoleList();
         return View::make('users.register',compact('roles'));
     }
+
+
 
     public function logout(){
         Auth::logout();
@@ -52,6 +57,7 @@ class UsersController extends \BaseController{
 
 
     public function index(){
+        $this->layout->title="Users";
         $users =  $this->user->paginate();
         $this->layout->content = View::make('users.index',compact('users'));
     }
@@ -65,10 +71,36 @@ class UsersController extends \BaseController{
     }
 
 
+
+
+    public function edit($id){
+        $this->layout->title = 'Update User';
+        $user = $this->user->find($id);
+        $roles = Role::getRoleList();
+        $this->layout->content =  View::make('users.edit',compact('roles','user'));
+    }
+
+
+
+
+    public function show($id){
+        $this->layout->title = "View User";
+        $user = $this->user->find($id);
+        $this->layout->content = View::make('users.show',compact('user'));
+    }
+
+
+
+
+
+
     public function dashboard(){
         $this->layout->title ="Dashboard";
         $this->layout->content = View::make('users.dashboard');
     }
+
+
+
 
 
     public function store(){
@@ -81,5 +113,40 @@ class UsersController extends \BaseController{
             return Redirect::to('/users');
         }
 
+    }
+
+
+
+    public function update($id){
+        //echo '<pre>'; print_r(Input::all());exit;
+        if(!$this->user->fill($data = Input::all())->isValid($id)){
+
+            Session::flash('message','Validation error occured');
+            return Redirect::back()->withErrors($this->user->errors)->withInput();
+        }else{
+
+            $this->user->find($id)->update($data);
+            Session::flash('message','User updated');
+            return Redirect::to('/users');
+        }
+    }
+
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+
+        if($this->user->destroy($id)){
+            Session::flash('message',' User deleted successfully');
+        }else{
+            Session::flash('message','Could not detele user, please try again');
+        }
+        return Redirect::back();
     }
 }

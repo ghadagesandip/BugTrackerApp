@@ -5,7 +5,7 @@
             <ul class="breadcrumb">
                 <li><a href="{{URL::to('home')}}">Home</a></li>
                 <li><a href="{{URL::to('users')}}">Users</a></li>
-                <li>Project</li>
+                <li>Add user details</li>
             </ul>
         </div>
     </div>

@@ -25,7 +25,7 @@ class ProjectsController extends \BaseController {
 	{
 
         $title='Test';
-		$projects = $this->project->all();
+		$projects = $this->project->with('user')->paginate();
         $this->layout->content = View::make('projects.index', compact('projects','title'));
 	}
 

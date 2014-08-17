@@ -12,8 +12,8 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-12">
-        <h1>User <a class="btn btn-small btn-success" href="{{ URL::to('users/create') }}"><span class="glyphicon glyphicon-plus"> </span> Add User</a></h1>
-        <!-- will be used to show any messages -->
+        <h1>User <a class="btn btn-success" href="{{ URL::to('users/create') }}"><span class="glyphicon glyphicon-plus"> </span> Add User</a></h1>
+
         @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
@@ -45,14 +45,14 @@
                     <td>
 
 
-                        {{ Form::open(array('url' => 'user/' . $user->id, 'class' => 'pull-right')) }}
+                        {{ Form::open(array('url' => 'users/' . $user->id, 'class' => 'pull-right')) }}
                         {{ Form::hidden('_method', 'DELETE') }}
                         {{ Form::submit('Delete this user', array('class' => 'btn btn-warning','onClick'=>'return confirm("Are you sure to delete?")')) }}
                         {{ Form::close() }}
-                        &nbsp;
-                        <a class="btn btn-small btn-primary pull-right" href="{{ URL::to('user/' . $user->id . '/edit') }}">Edit</a>
-                        &nbsp;
-                        <a class="btn btn-small btn-info pull-right" href="{{ URL::to('user/' . $user->id) }}">view</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-small btn-primary " href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-small btn-info " href="{{ URL::to('users/' . $user->id) }}">view</a>
 
                     </td>
                 </tr>

@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'laravel_bug_tracker',
 			'username'  => 'root',
-			'password'  => 'webwerks',
+			'password'  => 'sandip',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
