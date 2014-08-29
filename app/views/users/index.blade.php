@@ -41,19 +41,13 @@
                     <td>{{ $user->last_name}}</td>
                     <td>{{ $user->email}}</td>
                     <td>{{ $user->gender}}</td>
-                    <!-- we will also add show, edit, and delete buttons -->
                     <td>
-
-
+                        <a class="btn btn-small btn-info " href="{{ URL::to('users/' . $user->id) }}">view</a>
+                        <a class="btn btn-small btn-primary " href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
                         {{ Form::open(array('url' => 'users/' . $user->id, 'class' => 'pull-right')) }}
                         {{ Form::hidden('_method', 'DELETE') }}
                         {{ Form::submit('Delete this user', array('class' => 'btn btn-warning','onClick'=>'return confirm("Are you sure to delete?")')) }}
                         {{ Form::close() }}
-                        &nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-small btn-primary " href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-small btn-info " href="{{ URL::to('users/' . $user->id) }}">view</a>
-
                     </td>
                 </tr>
                 @endforeach

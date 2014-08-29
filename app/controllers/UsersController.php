@@ -14,6 +14,9 @@ class UsersController extends \BaseController{
 
 
     public function login(){
+        if(Auth::check()){
+            return Redirect::to('/dashboard');
+        }
         $this->title =" Login";
         return View::make('users.login');
     }
@@ -92,6 +95,11 @@ class UsersController extends \BaseController{
 
 
 
+    public function profile(){
+        $this->layout->title = "Profile";
+        $user = $this->user->with('role')->find(Auth::user()->id);
+        $this->layout->content = View::make('users.profile',compact('user'));
+    }
 
 
     public function dashboard(){

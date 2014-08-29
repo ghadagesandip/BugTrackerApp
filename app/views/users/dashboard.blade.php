@@ -10,7 +10,7 @@
         {{ HTML::link('/users', 'User',  true)}}
         {{ HTML::link('/projects', 'Projects',  true)}}
         {{ HTML::link('/bug-types', 'Bug Types',  true)}}
-        {{ HTML::link('/bug_statuses', 'bug Statuses',  true)}}
+        {{ HTML::link('/bug-statuses', 'bug Statuses',  true)}}
         {{ HTML::link('/bugs', 'Bugs',  true)}}
     </div>
 </div>

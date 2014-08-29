@@ -25,8 +25,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
-    public $errors;
 
+    public $errors;
 
 
     protected function rules($id=null){
@@ -56,4 +56,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function role(){
         return $this->belongsTo('Role');
     }
+
+
 }

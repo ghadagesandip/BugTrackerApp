@@ -1,0 +1,1 @@
+/var/www/html/laravelBugTracker/app/views/bugs/edit.blade.php

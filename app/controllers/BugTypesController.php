@@ -18,10 +18,9 @@ class BugTypesController extends \BaseController {
 	 */
 	public function index()
 	{
-
-		$bugtypes = $this->bugType->paginate();
-        //echo '<pre>'; print_r($bugtypes->toArray()); exit;
-		$this->layout->content =  View::make('bug_types.index', compact('bugtypes'));
+        $this->layout->title="Bug Type";
+		$bugtypes = $this->bugType->paginate(1);
+        $this->layout->content =  View::make('bug_types.index', compact('bugtypes'));
 	}
 
 
@@ -49,16 +48,15 @@ class BugTypesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Bugtype::$rules);
+        if(!$this->bugType->fill(Input::all())->isValid()){
+            Session::flash('message','Validation error occured while saving bug type, please try again');
+            return Redirect::back()->withInput()->withErrors($this->bugType->errors);
+        }else{
+            $this->bugType->save();
+            Session::flash('message','Bug type saved');
+            return Redirect::to('bug-tyepes');
+        }
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		Bugtype::create($data);
-
-		return Redirect::route('bugtypes.index');
 	}
 
 
@@ -85,8 +83,8 @@ class BugTypesController extends \BaseController {
 	public function edit($id)
 	{
 		$bugtype = Bugtype::find($id);
-
-		return View::make('bugtypes.edit', compact('bugtype'));
+        $this->layout->title ="Bug type";
+		$this->layout->content = View::make('bug_types.edit', compact('bugtype'));
 	}
 
 	/**
@@ -97,18 +95,16 @@ class BugTypesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$bugtype = Bugtype::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Bugtype::$rules);
+		if(!$this->bugType->fill(Input::all())->isValid($id)){
+            Session::flash('message','Validation error occred');
+            return Redirect::back()->withInput()->withErrors($this->bugType->errors);
+        }else{
+            $this->bugType->find($id)->update(Input::all());
+            Session::flash('message','Bug type updated');
+            return Redirect::route('bug-types.index');
+        }
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		$bugtype->update($data);
-
-		return Redirect::route('bugtypes.index');
 	}
 
 	/**

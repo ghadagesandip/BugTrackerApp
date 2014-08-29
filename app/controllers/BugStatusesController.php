@@ -2,17 +2,36 @@
 
 class BugStatusesController extends \BaseController {
 
+
+    protected $layout = 'layouts.default';
+
+
 	/**
 	 * Display a listing of bugstatuses
 	 *
 	 * @return Response
 	 */
+
+    protected $bugStatus;
+
+
+    public function __construct(BugStatus $bugStatus){
+        $this->bugStatus = $bugStatus;
+    }
+
+
+
+
+
 	public function index()
 	{
-		$bugstatuses = Bugstatus::all();
-
-		return View::make('bugstatuses.index', compact('bugstatuses'));
+		$bugstatuses = $this->bugStatus->all();
+        $this->layout->title ="Bug Status";
+		$this->layout->content = View::make('bug-statuses.index', compact('bugstatuses'));
 	}
+
+
+
 
 	/**
 	 * Show the form for creating a new bugstatus
@@ -21,8 +40,13 @@ class BugStatusesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('bugstatuses.create');
+        $this->layout->title ="Add New Status";
+		$this->layout->content= View::make('bug-statuses.create');
 	}
+
+
+
+
 
 	/**
 	 * Store a newly created bugstatus in storage.
@@ -31,16 +55,14 @@ class BugStatusesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Bugstatus::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		Bugstatus::create($data);
-
-		return Redirect::route('bugstatuses.index');
+        if(!$this->bugStatus->fill(Input::all())->isValid()){
+            Session::flash('message','Validation error occured');
+            return Redirect::back()->withInput()->withErrors($this->bugStatus->errors);
+        }else{
+            $this->bugStatus->save();
+            Session::flash('message','Created bug Status');
+            return Redirect::to('bug-statuses');
+        }
 	}
 
 	/**
@@ -51,9 +73,9 @@ class BugStatusesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$bugstatus = Bugstatus::findOrFail($id);
-
-		return View::make('bugstatuses.show', compact('bugstatus'));
+		$bugStatus = $this->bugStatus->findOrFail($id);
+        $this->layout->title = "View Bug Status";
+		$this->layout->content = View::make('bug-statuses.show', compact('bugStatus'));
 	}
 
 	/**
@@ -64,9 +86,9 @@ class BugStatusesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$bugstatus = Bugstatus::find($id);
-
-		return View::make('bugstatuses.edit', compact('bugstatus'));
+		$bugStatus = $this->bugStatus->find($id);
+        $this->layout->title ="Bug Type";
+		$this->layout->content = View::make('bug-statuses.edit', compact('bugStatus'));
 	}
 
 	/**
@@ -77,18 +99,14 @@ class BugStatusesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$bugstatus = Bugstatus::findOrFail($id);
-
-		$validator = Validator::make($data = Input::all(), Bugstatus::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		$bugstatus->update($data);
-
-		return Redirect::route('bugstatuses.index');
+        if(!$this->bugStatus->fill(Input::all())->isValid($id)){
+            Session::flash('message','Validation error occured');
+            return Redirect::back()->withinput()->withErrors($this->bugStatus->errors);
+        }else{
+            $this->bugStatus->find($id)->update(Input::all());
+            Session::flash('message','Bug status updated');
+            return Redirect::to('bug-statuses');
+        }
 	}
 
 	/**

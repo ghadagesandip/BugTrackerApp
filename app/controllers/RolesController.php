@@ -101,7 +101,6 @@ class RolesController extends \BaseController {
             Session::flash('message','Role updated');
             return Redirect::to('roles');
         }
-
 		return Redirect::route('roles.index');
 	}
 

@@ -12,7 +12,7 @@ class Role extends \Eloquent {
         return [
             'name'=>'required|min:3|unique:roles,name,'.$id
        ];
-}
+    }
 
 
     public function isValid($id=null){
