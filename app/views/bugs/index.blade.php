@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <h1>Bugs <a class="btn btn-success" href="{{URL::to('/bugs/create')}}"><i class="glyphicon glyphicon-plus">Add Bug Type</i></a></h1>
+        <h1>Bugs <a class="btn btn-success" href="{{URL::to('/bugs/create')}}"><i class="glyphicon glyphicon-plus">Add Bug</i></a></h1>
 
         @if(Session::has('message'))
         <div class="alert alert-success"> {{Session::get('message')}}</div>

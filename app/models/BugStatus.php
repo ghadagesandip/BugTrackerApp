@@ -25,4 +25,14 @@ class BugStatus extends \Eloquent {
         if($validator->passes()) return true;
         $this->errors = $validator->messages(); return false;
     }
+
+
+
+
+    public static function getBugStatusList(){
+        return static ::lists('name','id');
+    }
+
+
+
 }

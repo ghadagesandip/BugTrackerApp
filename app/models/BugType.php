@@ -29,4 +29,9 @@ class BugType extends \Eloquent {
     }
 
 
+    public static function getBugTypeList(){
+        return static::lists('name','id');
+    }
+
+
 }

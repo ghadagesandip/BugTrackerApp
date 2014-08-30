@@ -30,7 +30,12 @@ class BugsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('bugs.create');
+        $bugTypes = BugType::getBugTypeList();
+        $bugStatuses = BugStatus::getBugStatusList();
+        $assignTo = User::getProgrammerDesigner()->getList();
+
+        $this->layout->title="Add Bug";
+    	$this->layout->content = View::make('bugs.create',compact('bugTypes','bugStatuses','assignTo'));
 	}
 
 	/**
@@ -40,16 +45,20 @@ class BugsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Bug::$rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
 
-		Bug::create($data);
+        if(!$this->bug->fill(Input::all())->isValid()){
+            Session::flash('message','Validation error occurred');
+            return Redirect::back()->withErrors($this->bug->errors)->withInput();
+        }else{
+            if($this->bug->save(Input::all())){
+                Session::flash('message','Bug added to list, please try again');
+                return Redirect::to('/bugs');
+            }else{
+                Session::flash('message','Could not saved, please try again');
+            }
+        }
 
-		return Redirect::route('bugs.index');
 	}
 
 	/**

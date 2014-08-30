@@ -13,7 +13,7 @@
     <file path="/a.dummy" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406371251334" ignored="false" />
     <file path="$PROJECT_DIR$/bootstrap/compiled.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1405175976884" ignored="false" />
     <file path="/index.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409330238260" ignored="false" />
-    <file path="/default.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408649173576" ignored="false" />
+    <file path="/default.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409411821666" ignored="false" />
     <file path="/BaseController.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408119606406" ignored="false" />
     <file path="/ProjectsController.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408289301435" ignored="false" />
     <file path="$PROJECT_DIR$/../laravel/app/controllers/UsersController.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406457898227" ignored="false" />
@@ -27,7 +27,7 @@
     <file path="/2014_07_19_175347_create_bug_statuses_table.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1405792707750" ignored="false" />
     <file path="/BugStatusesTableSeeder.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1405792833477" ignored="false" />
     <file path="/app.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406228532528" ignored="false" />
-    <file path="/create.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408730602032" ignored="false" />
+    <file path="/create.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409412053629" ignored="false" />
     <file path="$PROJECT_DIR$/vendor/doctrine/cache/build.xml" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406371826215" ignored="false" />
     <file path="$PROJECT_DIR$/vendor/doctrine/common/build.xml" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406371826215" ignored="false" />
     <file path="$PROJECT_DIR$/vendor/doctrine/cache/tests/travis/phpunit.travis.xml" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406371826215" ignored="false" />
@@ -46,7 +46,7 @@
     <file path="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/phpunit.xml.dist" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406372231887" ignored="false" />
     <file path="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/phpunit.xml.dist" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1406372231887" ignored="false" />
     <file path="/edit.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408730638136" ignored="false" />
-    <file path="/User.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408201427839" ignored="false" />
+    <file path="/User.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409409699204" ignored="false" />
     <file path="/Project.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408290209013" ignored="false" />
     <file path="/show.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408730443216" ignored="false" />
     <file path="/login.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408119745987" ignored="false" />
@@ -68,12 +68,13 @@
     <file path="/login_footer.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408126679963" ignored="false" />
     <file path="/view.blade.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408267942452" ignored="false" />
     <file path="$PROJECT_DIR$/app/storage/sessions/4cc9db5dad70a127c084a07c7a766bc97a0c1248" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408475723881" ignored="false" />
-    <file path="/BugType.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408720543305" ignored="false" />
+    <file path="/BugType.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409399105812" ignored="false" />
     <file path="/BugStatusesController.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408730319595" ignored="false" />
-    <file path="/BugStatus.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1408725854496" ignored="false" />
+    <file path="/BugStatus.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409398482888" ignored="false" />
     <file path="/.gitignore" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409326874624" ignored="false" />
-    <file path="/BugsController.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409330330156" ignored="false" />
-    <file path="/Bug.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409330524136" ignored="false" />
+    <file path="/BugsController.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409413264031" ignored="false" />
+    <file path="/Bug.php" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409413757077" ignored="false" />
+    <file path="/functionscript.js" changelist="f37b0b09-e782-431a-b290-9387fd264446" time="1409412667251" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,34 @@
       <file leaf-file-name="BugsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/BugsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="36" selection-start="320" selection-end="320" vertical-scroll-proportion="-11.875">
+            <state line="48" column="0" selection-start="957" selection-end="957" vertical-scroll-proportion="-11.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/bugs/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="50" selection-start="3689" selection-end="3708" vertical-scroll-proportion="-9.333333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="61" selection-start="728" selection-end="728" vertical-scroll-proportion="-13.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="114" column="56" selection-start="2782" selection-end="2782" vertical-scroll-proportion="-19.666666">
               <folding />
             </state>
           </provider>
@@ -110,25 +138,7 @@
       <file leaf-file-name="Bug.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/Bug.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="195" selection-end="195" vertical-scroll-proportion="0.28037384">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="40" selection-start="1449" selection-end="1449" vertical-scroll-proportion="-20.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bugs/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="26" selection-start="1968" selection-end="1968" vertical-scroll-proportion="-23.083334">
+            <state line="25" column="8" selection-start="502" selection-end="502" vertical-scroll-proportion="0.5437202">
               <folding />
             </state>
           </provider>
@@ -152,20 +162,20 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/User.php" />
-        <option value="$PROJECT_DIR$/app/models/BugStatus.php" />
-        <option value="$PROJECT_DIR$/app/controllers/BugTypesController.php" />
-        <option value="$PROJECT_DIR$/app/views/bug-statuses/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/BugStatusesController.php" />
-        <option value="$PROJECT_DIR$/app/views/bug-statuses/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/roles/create.blade.php" />
         <option value="$PROJECT_DIR$/app/views/roles/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bug-statuses/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bug-statuses/create.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/bugs/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/BugStatus.php" />
+        <option value="$PROJECT_DIR$/app/models/BugType.php" />
+        <option value="$PROJECT_DIR$/public/css/font-awesome.min.css" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/models/User.php" />
+        <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/bugs/create.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/functionscript.js" />
         <option value="$PROJECT_DIR$/app/controllers/BugsController.php" />
         <option value="$PROJECT_DIR$/app/models/Bug.php" />
       </list>
@@ -245,6 +255,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,7 +270,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="laravelBugTracker" />
+              <option name="myItemId" value="BugTrackerApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,7 +280,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="BugTrackerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="laravelBugTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BugTrackerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravelBugTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BugTrackerApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -277,9 +320,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravelBugTracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BugTrackerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -349,13 +409,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1154" height="838" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32803467" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36799276" sideWeight="0.6734104" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26672694" sideWeight="0.6734104" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32658958" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -432,104 +492,106 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/roles/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/users/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="12" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.69078946" />
+        <state line="24" column="100" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/roles/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/bug_types/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="1" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.5484897" />
+        <state line="21" column="47" selection-start="854" selection-end="854" vertical-scroll-proportion="0.5007949" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bug-statuses/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/models/BugStatus.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="47" selection-start="758" selection-end="758" vertical-scroll-proportion="0.65217394" />
+        <state line="31" column="46" selection-start="630" selection-end="630" vertical-scroll-proportion="-19.375" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BugStatusesController.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="74" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bug-statuses/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="32" selection-start="1351" selection-end="1359" vertical-scroll-proportion="0.52305245" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bug-statuses/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="14" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.62798095" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="5" selection-start="105" selection-end="105" vertical-scroll-proportion="0.18018018">
+        <state line="33" column="5" selection-start="664" selection-end="664" vertical-scroll-proportion="0.79710144">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+    <entry file="file://$PROJECT_DIR$/app/models/BugType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="273" selection-end="273" vertical-scroll-proportion="0.21028037">
-          <folding />
-        </state>
+        <state line="35" column="0" selection-start="642" selection-end="642" vertical-scroll-proportion="0.817757" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_08_29_161814_create_bugs_table.php">
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="40" selection-start="371" selection-end="371" vertical-scroll-proportion="0.39719626">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="44" selection-start="1479" selection-end="1479" vertical-scroll-proportion="0.75949365">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="2" selection-start="392" selection-end="392" vertical-scroll-proportion="0.25700936">
+        <state line="22" column="45" selection-start="777" selection-end="777" vertical-scroll-proportion="0.5140187">
           <folding>
             <element signature="e#7#392#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bug_types/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/RolesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="2169" vertical-scroll-proportion="0.0">
+        <state line="140" column="31" selection-start="2951" selection-end="2951" vertical-scroll-proportion="0.74766356">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.14308426">
+        <state line="114" column="56" selection-start="2782" selection-end="2782" vertical-scroll-proportion="-19.666666">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bugs/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="26" selection-start="1968" selection-end="1968" vertical-scroll-proportion="-23.083334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BugsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="320" selection-end="320" vertical-scroll-proportion="-11.875">
+        <state line="22" column="61" selection-start="728" selection-end="728" vertical-scroll-proportion="-13.75">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="40" selection-start="1449" selection-end="1449" vertical-scroll-proportion="-20.0">
+        <state line="38" column="58" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.4194079">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BugsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="957" selection-end="957" vertical-scroll-proportion="-11.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/functionscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="187" selection-end="187" vertical-scroll-proportion="0.13953489">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bugs/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="50" selection-start="3689" selection-end="3708" vertical-scroll-proportion="-9.333333">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Bug.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="195" selection-end="195" vertical-scroll-proportion="0.28037384">
+        <state line="25" column="8" selection-start="502" selection-end="502" vertical-scroll-proportion="0.5437202">
           <folding />
         </state>
       </provider>
