@@ -23,7 +23,7 @@ class Bug extends \Eloquent {
 
 
     public function isValid($id = null){
-        
+
         $this->attributes['expected_close_date'] = date('y-m-d',strtotime($this->attributes['expected_close_date']));
 
         $validate = Validator::make($this->attributes,$this->rules($id));

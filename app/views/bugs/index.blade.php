@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <h1>Bugs <a class="btn btn-success" href="{{URL::to('/bugs/create')}}"><i class="glyphicon glyphicon-plus">Add Bug</i></a></h1>
+        <h1>Bugs <a class="btn btn-success" href="{{URL::to('/bugs/create')}}"><i class="glyphicon glyphicon-plus"> Add Bug</i></a></h1>
 
         @if(Session::has('message'))
         <div class="alert alert-success"> {{Session::get('message')}}</div>
@@ -23,15 +23,20 @@
                 <th>Description</th>
                 <th>Status</th>
                 <th>Type</th>
+                <th>Assignd to</th>
+                <th>Assigned From</th>
                 <th>Option</th>
                 </thead>
                 <tbody>
                 @foreach($bugs as $bug)
                 <tr>
-                    <td>{{$bug->id}}</td>
-                    <td>{{$bug->title}}</td>
-                    <td>{{$bug->description}}</td>
-                    <td>{{$bug->bugStatus->name}}</td>
+                    <td>{{ $bug->id }}</td>
+                    <td>{{ $bug->title }}</td>
+                    <td>{{ $bug->description }}</td>
+                    <td>{{ $bug->bugStatus->name }}</td>
+                    <td>{{ $bug->bugType->name }}</td>
+                    <td>{{ $bug->assignedTo->username }}</td>
+                    <td></td>
                     <td>
                         <a class="btn btn-info" href="{{URL::to('/bugs/'.$bug->id)}}">View</a>
                         <a class="btn btn-primary" href="{{URL::to('bugs/'.$bug->id.'/edit')}}">Edit</a>

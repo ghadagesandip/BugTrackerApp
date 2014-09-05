@@ -139,6 +139,7 @@ class RolesController extends \BaseController {
 
 
     public function savePost(){
+
         if(!$this->role->fill(Input::all())->isValid()){
              return Response::json(array('error'=>'Validation error occured','success'=>false));
         }else{
