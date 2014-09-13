@@ -9,7 +9,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
-    protected $fillable = array('role_id','first_name','last_name','username','password','password_confirmation','email','gender');
+    protected $fillable = array('role_id','first_name','last_name','user_email','username','password','password_confirmation','email','gender');
 
 	/**
 	 * The database table used by the model.
@@ -17,6 +17,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
+
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -28,23 +29,30 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public $errors;
 
+    protected $messages = array(
+        'user_email.required'=>'Please enter email address, to send password recovery email',
+        'user_email.registeredEmail'=>'No user registered with this email address'
+    );
+
 
     protected function rules($id=null){
         return [
-            'role_id'=>'required',
-            'first_name'=>'required|alpha',
-            'last_name'=>'required|alpha',
+            'role_id'=>'sometimes|required',
+            'first_name'=>'sometimes|required|alpha',
+            'last_name'=>'sometimes|required|alpha',
             'username'=>'sometimes|required|alpha_dash|unique:users',
             'password'=>'sometimes|required|between:6,18|confirmed',
             'password_confirmation'=>'sometimes|required',
-            'email'=>'required|unique:users,email,'.$id
+            'email'=>'sometimes|required|unique:users,email,'.$id,
+            'user_email'=>'sometimes|required|email|registeredEmail'
         ];
     }
 
 
 
     public function isValid($id=null){
-        $validation = Validator::make($this->attributes,$this->rules($id));
+
+        $validation = Validator::make($this->attributes,$this->rules($id),$this->messages);
         if($validation->passes()) return true;
 
         $this->errors = $validation->messages();

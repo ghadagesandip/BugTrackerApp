@@ -30,6 +30,7 @@
         <div class="form-group">
             <div class="col-sm-3 control-label">
                 {{Form::submit('Login',array('class'=>'btn btn-primary'))}}
+                <a class="btn" href="{{URL::to('forgot-password')}}">forgot password</a>
             </div>
         </div>
 

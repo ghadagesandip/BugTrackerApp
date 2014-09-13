@@ -9,7 +9,8 @@ class UsersController extends \BaseController{
     public function __construct(User $user){
         parent::__construct();
         $this->user = $user;
-        $this->beforeFilter('auth',array('except' => array('login','authenticate','getUsers')));
+        $this->beforeFilter('csrf', array('on' => 'post','PUT'));
+        $this->beforeFilter('auth',array('except' => array('login','authenticate','getUsers','forgotPassword','sendForgotPasswordEmail')));
     }
 
 
@@ -36,6 +37,12 @@ class UsersController extends \BaseController{
     }
 
 
+    public function forgotPassword(){
+        $this->layout->title="Forgot Password";
+        $this->layout->content = View::make('users.forgot_password');
+    }
+
+
 
     public function logout(){
         Auth::logout();
@@ -50,6 +57,7 @@ class UsersController extends \BaseController{
         $emailAttempt = Auth::attempt(array('email'=>Input::get('email'),'password'=>Input::get('password')));
         if($usernameAttempt||$emailAttempt){
             Session::put('user',Auth::user());
+            $event = Event::fire('auth.login', array(Auth::user()));
             return Redirect::to('/dashboard');
         }else{
             Session::flash('message','Invalid username and password');
@@ -126,16 +134,31 @@ class UsersController extends \BaseController{
 
 
     public function update($id){
-        //echo '<pre>'; print_r(Input::all());exit;
         if(!$this->user->fill($data = Input::all())->isValid($id)){
 
             Session::flash('message','Validation error occured');
             return Redirect::back()->withErrors($this->user->errors)->withInput();
         }else{
-
             $this->user->find($id)->update($data);
             Session::flash('message','User updated');
             return Redirect::to('/users');
+        }
+    }
+
+
+
+    public function sendForgotPasswordEmail(){
+        if(!$this->user->fill(Input::all())->isValid()){
+            Session::flash('message','Validation error occured');
+            return Redirect::back()->withErrors($this->user->errors)->withInput();
+        }else{
+            $user = User::where('email','=',Input::get('user_email'))->get();                       ;
+            Mail::send('emails.welcome', array(), function($message)
+            {
+                Session::flash('message','Sent email');
+                $message->to('ghadagesandip@gmail.com', 'Sandy')
+                    ->subject('Welcome to Cribbb!');
+            });
         }
     }
 

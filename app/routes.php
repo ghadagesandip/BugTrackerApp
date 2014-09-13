@@ -27,10 +27,14 @@ Route::get('register','UsersController@register');
 Route::get('dashboard','UsersController@dashboard');
 Route::get('getUsers','UsersController@getUsers');
 Route::get('profile','UsersController@profile');
-
+Route::get('forgot-password','UsersController@forgotPassword');
+Route::post('sendEmail','UsersController@sendForgotPasswordEmail');
 
 Route::get('/getRolesList','RolesController@getRolesList');
 Route::get('/getRole/{id}','RolesController@getRole');
 Route::post('savePost','RolesController@savePost');
+
+
+
 
 
