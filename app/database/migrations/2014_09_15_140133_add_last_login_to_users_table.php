@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBugStatusesTable extends Migration {
+class AddLastLoginToUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,9 @@ class CreateBugStatusesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('bug_statuses', function(Blueprint $table)
+		Schema::table('users', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->string('name')->unique();
-			$table->timestamps();
+			$table->dateTime('last_login')->after('gender');
 		});
 	}
 
@@ -28,7 +26,10 @@ class CreateBugStatusesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bug_statuses');
+		Schema::table('users', function(Blueprint $table)
+		{
+            $table->dropColumn('last_login');
+		});
 	}
 
 }

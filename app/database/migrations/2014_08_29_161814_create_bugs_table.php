@@ -15,7 +15,7 @@ class CreateBugsTable extends Migration {
 		Schema::create('bugs', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->text('title')->unique();
+			$table->text('title');
 			$table->text('description');
 			$table->integer('bug_status_id');
 			$table->integer('bug_type_id');

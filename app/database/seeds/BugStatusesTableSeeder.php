@@ -7,13 +7,12 @@ class BugStatusesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
-
-		foreach(range(1, 10) as $index)
+		//$faker = Faker::create();
+        $statuses = array('Open','Closed','Resolved');
+		foreach($statuses as $status)
 		{
-			BugStatus::create([
+            BugStatus::create(array('name'=>$status));
 
-			]);
 		}
 	}
 

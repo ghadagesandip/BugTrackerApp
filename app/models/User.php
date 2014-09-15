@@ -29,6 +29,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public $errors;
 
+
     protected $messages = array(
         'user_email.required'=>'Please enter email address, to send password recovery email',
         'user_email.registeredEmail'=>'No user registered with this email address'
