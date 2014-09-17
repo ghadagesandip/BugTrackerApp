@@ -18,6 +18,7 @@ Route::resource('projects', 'ProjectsController');
 Route::resource('bug-types', 'BugTypesController');
 Route::resource('bug-statuses', 'BugStatusesController');
 Route::resource('bugs', 'BugsController');
+Route::resource('todo-statuses', 'TodoStatusesController');
 
 Route::get('/', 'UsersController@login');
 Route::get('login', 'UsersController@login');
