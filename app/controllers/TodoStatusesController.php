@@ -1,6 +1,6 @@
 <?php
 
-class TodoStatusesController extends BaseController{
+class TodoStatusesController extends \BaseController{
 
     public $layout = 'layouts.default';
 

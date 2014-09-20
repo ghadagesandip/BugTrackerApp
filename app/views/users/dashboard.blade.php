@@ -12,6 +12,8 @@
         {{ HTML::link('/bug-types', 'Bug Types',  true)}}
         {{ HTML::link('/bug-statuses', 'bug Statuses',  true)}}
         {{ HTML::link('/bugs', 'Bugs',  true)}}
+        {{ HTML::link('/todo-statuses', 'Todo Statuses',  true)}}
+        {{ HTML::link('/todos', 'Todos',  true)}}
     </div>
 </div>
 @stop

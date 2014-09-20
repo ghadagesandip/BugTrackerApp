@@ -13,10 +13,11 @@ class CreateTodosTable extends Migration {
 	public function up()
 	{
 		Schema::create('todos',function(Blueprint $table){
-            $table->unsignedBigInteger('id');
+            $table->bigIncrements('id');
             $table->string('title','200');
             $table->text('description');
             $table->integer('user_id');
+            $table->integer('project_id');
             $table->date('date');
             $table->integer('todo_status');
             $table->timestamps();
