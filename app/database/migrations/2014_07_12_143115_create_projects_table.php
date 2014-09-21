@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration {
 			$table->increments('id');
 			$table->string('name', 250);
 			$table->integer('created_by');
-			$table->boolean('is_active')->default(1);
+			$table->boolean('is_active')->nullable()->default(0);
 			$table->string('logo', 250);
 			$table->timestamps();
 		});

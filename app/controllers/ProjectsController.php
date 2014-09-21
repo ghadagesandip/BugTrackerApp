@@ -62,6 +62,7 @@ class ProjectsController extends \BaseController {
             return Redirect::back()->withErrors($this->project->errors)->withInput();
 		}
         Session::flash('message','Project Added');
+        $this->project->created_by = Auth::user()->id;
 		$this->project->save();
 		return Redirect::route('projects.index');
 
@@ -100,6 +101,7 @@ class ProjectsController extends \BaseController {
 	public function edit($id)
 	{
 		$project = $this->project->find($id);
+        //echo '<pre>'; print_r($project->toArray());exit;
         $this->layout->content=  View::make('projects.edit', compact('project'));
 	}
 
@@ -115,8 +117,8 @@ class ProjectsController extends \BaseController {
 	public function update($id)
 	{
 		$this->project = $this->project->findOrFail($id);
-
-        if(!$this->project->fill($input = Input::all())->isValid()){
+        //echo "<pre>"; print_r(Input::all());exit;
+        if(!$this->project->fill($input = Input::all())->isValid($id)){
             Session::flash('message','Validation failed try again');
             return Redirect::back()->withInput()->withErrors($this->project->errors);
         }

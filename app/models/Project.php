@@ -10,7 +10,7 @@ class Project extends \Eloquent {
     }
 
 	// Don't forget to fill this array
-	protected $fillable = ['name'];
+	protected $fillable = ['name','is_active'];
 
     public $errors;
 
