@@ -23,9 +23,9 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Title</th>
                     <th>Project</th>
-                    <th>User</th>
+                    <th>Title</th>
+                    <th>Description</th>
                     <th>Option</th>
                 </tr>
                 </thead>
@@ -33,10 +33,9 @@
                 @foreach($todos as $todo)
                 <tr>
                     <td>{{$todo->id}}</td>
-                    <td>{{$todo->title}}</td>
                     <td>{{$todo->project->name}}</td>
-                    <td>{{$todo->user->first_name}}</td>
                     <td>{{$todo->title}}</td>
+                    <td>{{$todo->description}}</td>
                     <td>
 
                     </td>

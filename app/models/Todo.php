@@ -30,4 +30,9 @@ class Todo extends \Eloquent{
         return $this->belongsTo('Project');
     }
 
+
+
+    public function scopeOwner($query,$userId){
+        return $query->whereUserId($userId);
+    }
 }

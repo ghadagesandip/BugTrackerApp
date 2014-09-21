@@ -16,7 +16,7 @@ class TodosController extends \BaseController{
 
     public function index(){
         $this->layout->title ="Todo";
-        $todos = $this->todo->paginate();
+        $todos = $this->todo->owner(Auth::user()->id)->paginate();
         $this->layout->content = View::make('Todos.index',compact('todos'));
     }
 
@@ -49,8 +49,7 @@ class TodosController extends \BaseController{
 
 
     public function getTodos(){
-        $todos = $this->todo->all();
-
+        $todos = $this->todo->owner(Input::get('user_id'))->get();
         return Response::JSON($todos);
     }
 }
