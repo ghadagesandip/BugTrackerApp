@@ -25,17 +25,21 @@ class TodosController extends \BaseController{
 
     public function create(){
         $this->layout->title="Add New Todo";
-        $this->layout->content = View::make('Todos.create');
+        $projects = Project::active()->getProjectList();
+        $projects[] = "General";
+        $this->layout->content = View::make('Todos.create',compact('projects'));
     }
 
 
 
     
     public function store(){
-        if(!$this->todo->fill(Input::all())->isValid()){
+
+        if(!$this->todo->fill($data = Input::all())->isValid()){
             Session::flash('message','Validation error occured');
             return Redirect::back()->withInput()->withErrors($this->todo->errors);
         }else{
+            $this->todo->user_id = Auth::user()->id;
             $this->todo->save();
             Session::flash('message','Todo saved');
             return Redirect::to('todos');
@@ -45,7 +49,8 @@ class TodosController extends \BaseController{
 
 
     public function getTodos(){
-        $todos =$this->user->all();
+        $todos = $this->todo->all();
+
         return Response::JSON($todos);
     }
 }

@@ -17,7 +17,7 @@ class CreateTodosTable extends Migration {
             $table->string('title','200');
             $table->text('description');
             $table->integer('user_id');
-            $table->integer('project_id');
+            $table->integer('project_id')->nullable();
             $table->date('date');
             $table->integer('todo_status');
             $table->timestamps();

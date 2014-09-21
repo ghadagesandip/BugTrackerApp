@@ -17,6 +17,13 @@
              @endif
 
              {{Form::open(array('url'=>'todos','class'=>'form-horizontal'))}}
+
+                <div class="form-group">
+                    {{Form::label('project_id','Project',array('class'=>'col-sm-2 control-label'))}}
+                    <div class="col-sm-4">
+                        {{Form::select('project_id', $projects, Input::old('project_id'),array('class'=>'col-sm-4 form-control'))}}
+                    </div>
+                </div>
                 <div class="form-group">
                     {{Form::label('title','Title',array('class'=>'col-sm-2 control-label'))}}
                     <div class="col-sm-4 @if($errors->has('title')) has-error has-feedback @endif">

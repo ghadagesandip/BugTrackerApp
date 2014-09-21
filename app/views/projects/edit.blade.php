@@ -24,6 +24,14 @@
         </div>
 
         <div class="form-group">
+            {{Form::label('is_active','Project Active',array('class'=>'col-sm-2 control-label'))}}
+            <div class="col-sm-4 @if($errors->has('is_active')) has-error has-feedback @endif">
+                {{Form::checkbox('is_active',Input::old('is_active'),array('class'=>'form-control')) }}
+                {{$errors->first('is_active','<p class="text-danger">:message</p>')}}
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-sm-4 control-label">
                 {{ Form::submit('Update Project ',array('class'=>'btn btn-primary'))}}
                 <a class="btn btn-info" href="{{URL::to('/projects')}}">Cancel</a>

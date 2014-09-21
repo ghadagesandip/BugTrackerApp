@@ -27,4 +27,19 @@ class Project extends \Eloquent {
     public function user(){
        return $this->belongsTo('User','created_by');
     }
+
+
+
+    public function scopeActive($query){
+        return $query->whereIsActive(1);
+    }
+
+
+    public function scopeGetProjectList($query){
+        return $query->lists('name','id');
+    }
+
+
+
+
 }

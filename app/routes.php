@@ -32,9 +32,14 @@ Route::get('profile','UsersController@profile');
 Route::get('forgot-password','UsersController@forgotPassword');
 Route::post('sendEmail','UsersController@sendForgotPasswordEmail');
 
+
+
+//apis
 Route::get('/getRolesList','RolesController@getRolesList');
 Route::get('/getRole/{id}','RolesController@getRole');
 Route::post('savePost','RolesController@savePost');
+Route::get('/getTodos','TodosController@getTodos');
+
 
 //hello
 
