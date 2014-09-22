@@ -1,5 +1,6 @@
 
 @section('content')
+
 <div class="row">
     <div class="col-md-12">
         <ol class="breadcrumb">
@@ -26,7 +27,7 @@
         <div class="form-group">
             {{Form::label('is_active','Project Active',array('class'=>'col-sm-2 control-label'))}}
             <div class="col-sm-4 @if($errors->has('is_active')) has-error has-feedback @endif">
-                {{Form::checkbox('is_active',Input::old('is_active'),array('class'=>'form-control')) }}
+                {{Form::checkbox('is_active',1,$project->is_active,array('class'=>'form-control')) }}
                 {{$errors->first('is_active','<p class="text-danger">:message</p>')}}
             </div>
         </div>

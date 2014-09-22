@@ -12,7 +12,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Projects</h1>
+            <h1 class="col-sm-offset-2"> <i class="glyphicon glyphicon-plus"></i> Add Project</h1>
             @if(Session::has('message'))
             <div class="alert alert-danger">{{Session::get('message')}}</div>
             @endif

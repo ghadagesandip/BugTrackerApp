@@ -12,7 +12,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1 class="col-md-offset-2 col-lg-offset-4"><i class="glyphicon glyphicon-user"></i> Add User</h1>
+            <h1 class="col-md-offset-2 "><i class="glyphicon glyphicon-user"></i> Add User</h1>
             @if(Session::has('message'))
             <div class="alert alert-danger">{{Session::get('message')}}</div>
             @endif

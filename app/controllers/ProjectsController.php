@@ -117,12 +117,15 @@ class ProjectsController extends \BaseController {
 	public function update($id)
 	{
 		$this->project = $this->project->findOrFail($id);
-        //echo "<pre>"; print_r(Input::all());exit;
+
         if(!$this->project->fill($input = Input::all())->isValid($id)){
             Session::flash('message','Validation failed try again');
             return Redirect::back()->withInput()->withErrors($this->project->errors);
         }
         Session::flash('message','Project details updated');
+        if(!isset($input['Project']['is_active'])){
+            $this->project->is_active = 0;
+        }
 		$this->project->update($input);
 		return Redirect::route('projects.index');
 	}

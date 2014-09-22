@@ -19,13 +19,13 @@
         </div>
 
         <table class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-striped table-responsive table-bordered">
                 <thead>
                 <tr>
                     <th>Id</th>
                     <th>Project</th>
                     <th>Title</th>
-                    <th>Description</th>
+                    <th class="col-sm-7">Description</th>
                     <th>Option</th>
                 </tr>
                 </thead>
@@ -37,7 +37,12 @@
                     <td>{{$todo->title}}</td>
                     <td>{{$todo->description}}</td>
                     <td>
-
+                        <a class="btn btn-info small" href="{{URL::to('/todos/'.$todo->id)}}">View</a>
+                        <a class="btn btn-warning" href="{{URL::to('todos/'.$todo->id.'/edit')}}">Edit</a>
+                        {{Form::open(array('url'=>'todos/'.$todo->id,'class'=>'pull-right'))}}
+                        {{Form::hidden('_method','DELETE')}}
+                        {{Form::submit('Delete', array('class' => 'btn btn-danger','onClick'=>'return confirm("Are you sure to delete?")')) }}
+                        {{Form::close()}}
                     </td>
                 </tr>
                 @endforeach

@@ -26,9 +26,9 @@ class TodosController extends \BaseController{
     public function create(){
         $this->layout->title="Add New Todo";
         $projects = Project::active()->getProjectList();
-        $projects[] = "General";
         $this->layout->content = View::make('Todos.create',compact('projects'));
     }
+
 
 
 
@@ -48,8 +48,32 @@ class TodosController extends \BaseController{
 
 
 
+
+    public function show($id){
+        $this->layout->title ="View Todo";
+        $todo = $this->todo->findOrFail($id);
+        $this->layout->content = View::make('Todos.show',compact('todo'));
+
+    }
+
+
+
+    public function edit($id){
+        $this->layout->title ="Update Todo";
+        $todo = $this->todo->findOrFail($id);
+        $projects = Project::active()->getProjectList();
+        $this->layout->content  = View::make('Todos.edit',compact('todo','projects'));
+
+    }
+
+
+
+
     public function getTodos(){
         $todos = $this->todo->owner(Input::get('user_id'))->get();
         return Response::JSON($todos);
     }
+
+
+
 }

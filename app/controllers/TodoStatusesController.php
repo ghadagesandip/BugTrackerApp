@@ -19,4 +19,20 @@ class TodoStatusesController extends \BaseController{
     }
 
 
+    public function create(){
+        $this->layout->title ="Add new Todo";
+        $this->layout->content = View::make('TodoStatus.create');
+    }
+
+
+    public function store(){
+        if(!$this->todoStatus->fill(Input::all())->isValid()){
+           Session::flash('message','Validation error occured');
+           return Redirect::back()->withInput()->withErrors($this->todoStatus->errors);
+        }else{
+            Session::flash('message','Todo Status added successfully');
+            return Redirect::to('todo-statuses');
+        }
+    }
+
 }
