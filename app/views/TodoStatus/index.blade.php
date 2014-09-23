@@ -18,13 +18,13 @@
         @endif
 
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-striped table-bordered">
                 <thead>
                 <th>Id</th>
                 <th>Todo Status</th>
                 <th>Created</th>
                 <th>Modified</th>
-                <th>Option</th>
+                <th class="col-sm-2">Option</th>
                 </thead>
                 <tbody>
                 @foreach($todoStatuses as $todoStatus)
@@ -38,7 +38,7 @@
                         <a class="btn  btn-warning" href="{{URL::to('/todo-statuses/'.$todoStatus->id.'/edit')}}">Edit</a>
                         {{Form::open(array('url'=>'todo-statuses/'.$todoStatus->id,'class'=>'pull-right'))}}
                         {{Form::hidden('_method','DELETE')}}
-                        {{Form::submit('Delete this user', array('class' => 'btn btn-danger','onClick'=>'return confirm("Are you sure to delete?")')) }}
+                        {{Form::submit('Delete', array('class' => 'btn btn-danger','onClick'=>'return confirm("Are you sure to delete?")')) }}
                         {{Form::close()}}
                     </td>
                 </tr>

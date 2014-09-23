@@ -25,7 +25,7 @@
                         <th>Status</th>
                         <th>Created</th>
                         <th>Modified</th>
-                        <th>Option</th>
+                        <th class="col-sm-2">Option</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,6 +38,10 @@
                         <td>
                             <a class="btn btn-info" href="{{URL::to('bug-statuses/'.$bugstatus->id)}}">View</a>
                             <a class="btn btn-primary" href="{{URL::to('bug-statuses/'.$bugstatus->id.'/edit')}}"> Edit</a>
+                            {{Form::open(array('url'=>'bug-statuses/'.$bugstatus->id,'class'=>'pull-right'))}}
+                            {{Form::hidden('_method','DELETE')}}
+                            {{Form::submit('Delete',array('class'=>'btn btn-warning','onClick'=>'return confirm("Are you sure to delete?")')) }}
+                            {{Form::close()}}
                         </td>
 
                     </tr>

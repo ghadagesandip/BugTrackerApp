@@ -33,12 +33,12 @@
                         <td>{{$role->name}}</td>
                         <td>{{$role->created_at}}</td>
                         <td>{{$role->updated_at}}</td>
-                        <td>
+                        <td class="col-sm-2">
                             <a class="btn btn-info small" href="{{URL::to('/roles/'.$role->id)}}">View </a>
                             <a class="btn  btn-warning" href="{{URL::to('roles/'.$role->id.'/edit')}}">Edit</a>
                             {{Form::open(array('url'=>'roles/'.$role->id,'class'=>'pull-right'))}}
                             {{Form::hidden('_method','DELETE')}}
-                            {{Form::submit('Delete this user', array('class' => 'btn btn-danger','onClick'=>'return confirm("Are you sure to delete?")')) }}
+                            {{Form::submit('Delete', array('class' => 'btn btn-danger','onClick'=>'return confirm("Are you sure to delete?")')) }}
                             {{Form::close()}}
                         </td>
                     </tr>

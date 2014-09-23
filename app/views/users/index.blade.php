@@ -29,7 +29,7 @@
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Gender</th>
-                    <th>Option</th>
+                    <th class="col-sm-2">Option</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,7 +46,7 @@
                         <a class="btn btn-small btn-primary " href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
                         {{ Form::open(array('url' => 'users/' . $user->id, 'class' => 'pull-right')) }}
                         {{ Form::hidden('_method', 'DELETE') }}
-                        {{ Form::submit('Delete this user', array('class' => 'btn btn-warning','onClick'=>'return confirm("Are you sure to delete?")')) }}
+                        {{ Form::submit('Delete', array('class' => 'btn btn-warning','onClick'=>'return confirm("Are you sure to delete?")')) }}
                         {{ Form::close() }}
                     </td>
                 </tr>

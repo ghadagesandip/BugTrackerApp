@@ -52,7 +52,7 @@ class BugsController extends \BaseController {
             return Redirect::back()->withErrors($this->bug->errors)->withInput();
         }else{
             if($this->bug->save(Input::all())){
-                Session::flash('message','Bug added to list, please try again');
+                Session::flash('message','Bug added to list');
                 return Redirect::to('/bugs');
             }else{
                 Session::flash('message','Could not saved, please try again');

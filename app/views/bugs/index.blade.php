@@ -16,7 +16,7 @@
         <div class="alert alert-success"> {{Session::get('message')}}</div>
         @endif
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-striped table-bordered">
                 <thead>
                 <th>Id</th>
                 <th>Title</th>
@@ -25,7 +25,7 @@
                 <th>Type</th>
                 <th>Assignd to</th>
                 <th>Assigned From</th>
-                <th>Option</th>
+                <th class="col-sm-2">Option</th>
                 </thead>
                 <tbody>
                 @foreach($bugs as $bug)
