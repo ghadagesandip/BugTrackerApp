@@ -8,7 +8,7 @@ class TodosController extends \BaseController{
 
     public function __construct(Todo $todo){
         parent::__construct();
-        $this->beforeFilter('auth',array('except'=>array('getTodos')));
+        $this->beforeFilter('auth',array('except'=>array('getTodos','saveTodo')));
         $this->todo  = $todo;
 
     }
@@ -88,6 +88,11 @@ class TodosController extends \BaseController{
         return Response::JSON($todos);
     }
 
+
+    public function saveTodo(){
+        $todo = $this->todo->create(Input::all());
+        return  Response::json($todo);
+    }
 
 
 }

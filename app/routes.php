@@ -39,6 +39,7 @@ Route::get('/getRolesList','RolesController@getRolesList');
 Route::get('/getRole/{id}','RolesController@getRole');
 Route::post('savePost','RolesController@savePost');
 Route::get('/getTodos','TodosController@getTodos');
+Route::post('/saveTodo','TodosController@saveTodo');
 
 
 //hello
