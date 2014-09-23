@@ -18,7 +18,7 @@
         @endif
 
         <div class="table-responsive">
-            <table class="table table-striped table-bordered">
+            <table class="table table-hover table-bordered">
                 <thead>
                 <th>Id</th>
                 <th>Todo Status</th>

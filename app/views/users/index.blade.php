@@ -15,12 +15,15 @@
         <h1>User <a class="btn btn-success" href="{{ URL::to('users/create') }}"><span class="glyphicon glyphicon-plus"> </span> Add User</a></h1>
 
         @if (Session::has('message'))
-        <div class="alert alert-info">{{ Session::get('message') }}</div>
+        <div class="alert alert-info col-lg-12">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ Session::get('message') }}
+        </div>
         @endif
 
 
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered">
+        <div class="table-responsive col-sm-12">
+            <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
                     <th>Id</th>

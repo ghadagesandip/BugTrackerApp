@@ -41,6 +41,13 @@
                 </div>
 
                 <div class="form-group">
+                    {{Form::label('todo_status','Completed',array('class'=>'col-sm-2 control-label'))}}
+                    <div class="col-sm-4">
+                        {{Form::checkbox('todo_status',1,Input::old('todo_status'),array('class'=>'col-sm-4 form-control'))}}
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <div class="col-sm-4 control-label">
                         {{Form::submit('Update',array('class'=>'btn btn-success'))}}
                         <a href="{{URL::to('/todos')}}" class="btn">Cancel</a>

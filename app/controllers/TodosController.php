@@ -67,6 +67,20 @@ class TodosController extends \BaseController{
     }
 
 
+    public function update($id){
+        $this->todo = $this->todo->find($id);
+        if(!$this->todo->fill($input=Input::all())->isValid($id)){
+            Session::flash('message','Validation error occured');
+            return Redirect::back()->withInput()->withErrors($this->todo->errors);
+        }else{
+            if(!isset($input['Todo']['todo_status'])){
+               $this->todo->todo_status = 0;
+            }
+            $this->todo->update($input);
+            Session::flash('message','Todo updated ');
+            return Redirect::to('todos');
+        }
+    }
 
 
     public function getTodos(){

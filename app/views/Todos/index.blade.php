@@ -10,16 +10,19 @@
     </div>
 
     <div class="row">
+
         <div class="col-sm-12">
             <h1>Todos <a class="btn btn-success" href="{{URL::to('/todos/create')}}">Add New</a></h1>
-
             @if(Session::has('message'))
-              <div class="alert alert-info"> </div> {{Session::get('message')}}
+              <div class="alert alert-info">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  {{Session::get('message')}}
+              </div>
             @endif
         </div>
 
         <table class="table-responsive">
-            <table class="table table-striped table-responsive table-bordered">
+            <table class="table table-hover table-responsive table-bordered">
                 <thead>
                 <tr>
                     <th>Id</th>

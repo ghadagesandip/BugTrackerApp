@@ -12,4 +12,10 @@ $(document).ready(function(){
         dateFormat: "dd-mm-yy"
     });
 
+    if($(".table").length){
+        if($(this).find("tbody").find("tr").length==0){
+           $(this).find("tbody").html("<tr><td colspan='12' class='text-center'><span class='label label-info'>No records found</span></td></tr>");
+        }
+    }
+
 });

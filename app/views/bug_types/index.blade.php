@@ -16,7 +16,7 @@
         <div class="alert alert-success"> {{Session::get('message')}}</div>
         @endif
         <div class="table-responsive">
-            <table class="table table-striped table-bordered">
+            <table class="table table-hover table-bordered">
                 <thead>
                     <th>Id</th>
                     <th>Bug Type</th>
