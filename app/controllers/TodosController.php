@@ -8,7 +8,7 @@ class TodosController extends \BaseController{
 
     public function __construct(Todo $todo){
         parent::__construct();
-        $this->beforeFilter('auth',array('except'=>array('getTodos','saveTodo')));
+        $this->beforeFilter('auth',array('except'=>array('getTodos','saveTodo','getTodo','updateTodo')));
         $this->todo  = $todo;
 
     }
@@ -83,10 +83,11 @@ class TodosController extends \BaseController{
     }
 
 
-    public function getTodos(){
-        $todos = $this->todo->owner(Input::get('user_id'))->get();
+    public function getTodos($userId){
+        $todos = $this->todo->owner($userId)->get();
         return Response::JSON($todos);
     }
+
 
 
     public function saveTodo(){
@@ -94,5 +95,21 @@ class TodosController extends \BaseController{
         return  Response::json($todo);
     }
 
+
+
+    public function getTodo($id=null){
+        $todo = $this->todo->find($id);
+        return Response::JSON($todo);
+    }
+
+
+
+    public function updateTodo($id){
+
+        if($this->todo->find($id)->update(Input::all())){
+            return Response::JSON(array('message'=>'Todo updated'));
+        }
+
+    }
 
 }
