@@ -34,7 +34,7 @@ Route::post('sendEmail','UsersController@sendForgotPasswordEmail');
 
 
 
-//apis
+//apis for angular app
 Route::get('/getRolesList','RolesController@getRolesList');
 Route::get('/getRole/{id}','RolesController@getRole');
 Route::post('savePost','RolesController@savePost');
@@ -42,6 +42,7 @@ Route::get('/getTodos/{userId}','TodosController@getTodos');
 Route::post('/saveTodo','TodosController@saveTodo');
 Route::get('getTodo/{id}','TodosController@getTodo');
 Route::put('updateTodo/{id}','TodosController@updateTodo');
+Route::get('getAllActiveProjectListByUser/{userId}','ProjectsController@getAllActiveProjectListByUser');
 
 
 //hello

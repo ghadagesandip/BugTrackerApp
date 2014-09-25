@@ -150,5 +150,8 @@ class ProjectsController extends \BaseController {
 	}
 
 
+    public function getAllActiveProjectListByUser($userId){
+        echo $userId;exit;
+    }
 
 }
