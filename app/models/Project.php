@@ -29,7 +29,6 @@ class Project extends \Eloquent {
     }
 
 
-
     public function scopeActive($query){
         return $query->whereIsActive(1);
     }
@@ -40,6 +39,9 @@ class Project extends \Eloquent {
     }
 
 
+    public function scopeByUser($query,$userId){
+        return $query->whereUserId($userId);
+    }
 
 
 }

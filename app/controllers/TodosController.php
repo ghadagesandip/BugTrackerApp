@@ -8,7 +8,7 @@ class TodosController extends \BaseController{
 
     public function __construct(Todo $todo){
         parent::__construct();
-        $this->beforeFilter('auth',array('except'=>array('getTodos','saveTodo','getTodo','updateTodo')));
+        $this->beforeFilter('auth',array('except'=>array('getTodos','saveTodo','getTodo','updateTodo','deleteTodo')));
         $this->todo  = $todo;
 
     }
@@ -109,7 +109,16 @@ class TodosController extends \BaseController{
         if($this->todo->find($id)->update(Input::all())){
             return Response::JSON(array('message'=>'Todo updated'));
         }
+    }
 
+
+
+    public function deleteTodo($todoId){
+        if($this->todo->destroy($todoId)){
+            return Response::JSON(array('status'=>'success'));
+        }else{
+            return Response::JSON(array('status'=>'fail'));
+        }
     }
 
 }

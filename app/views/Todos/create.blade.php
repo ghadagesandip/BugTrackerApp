@@ -41,6 +41,9 @@
                 </div>
 
                 <div class="form-group">
+
+                </div>
+                <div class="form-group">
                     <div class="col-sm-4 control-label">
                         {{Form::submit('add',array('class'=>'btn btn-success'))}}
                         <a href="{{URL::to('/todos')}}" class="btn">Cancel</a>

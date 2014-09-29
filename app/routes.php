@@ -43,6 +43,7 @@ Route::post('/saveTodo','TodosController@saveTodo');
 Route::get('getTodo/{id}','TodosController@getTodo');
 Route::put('updateTodo/{id}','TodosController@updateTodo');
 Route::get('getAllActiveProjectListByUser/{userId}','ProjectsController@getAllActiveProjectListByUser');
+Route::delete('deleteTodo/{todoId}','TodosController@deleteTodo');
 
 
 //hello

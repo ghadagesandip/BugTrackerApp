@@ -9,7 +9,7 @@ class ProjectsController extends \BaseController {
     public function __construct(Project $project){
 
         $this->project = $project;
-
+        $this->beforeFilter('auth',array('except'=>array('getAllActiveProjectListByUser')));
         parent::__construct();
     }
 
@@ -23,7 +23,6 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-
         $this->layout->title='Projects';
 		$projects = $this->project->with('user')->paginate();
         $this->layout->content = View::make('projects.index', compact('projects','title'));
@@ -151,7 +150,8 @@ class ProjectsController extends \BaseController {
 
 
     public function getAllActiveProjectListByUser($userId){
-        echo $userId;exit;
+        $projects = $this->project->active()->getProjectList();
+        return Response::JSON($projects);
     }
 
 }
