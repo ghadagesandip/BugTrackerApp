@@ -29,10 +29,13 @@ class Project extends \Eloquent {
     }
 
 
+    public function users(){
+        return $this->belongsToMany('User');
+    }
+
     public function scopeActive($query){
         return $query->whereIsActive(1);
     }
-
 
     public function scopeGetProjectList($query){
         return $query->lists('name','id');

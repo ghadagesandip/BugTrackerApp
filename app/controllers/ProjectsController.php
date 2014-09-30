@@ -40,9 +40,9 @@ class ProjectsController extends \BaseController {
 	public function create()
 	{
         $this->layout->title ='Add Project';
-		$this->layout->content = View::make('projects.create');
+        $users = User::with('role')->lists('first_name','id');
+        $this->layout->content = View::make('projects.create',compact('users'));
 	}
-
 
 
 
@@ -55,6 +55,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function store()
 	{
+
     	if (!$this->project->fill(Input::all())->isValid())
 		{
             Session::flash('message','Validation Failed');
@@ -62,7 +63,7 @@ class ProjectsController extends \BaseController {
 		}
         Session::flash('message','Project Added');
         $this->project->created_by = Auth::user()->id;
-		$this->project->save();
+        $this->project->save();
 		return Redirect::route('projects.index');
 
 	}
@@ -82,7 +83,6 @@ class ProjectsController extends \BaseController {
 	{
         $this->layout->title = 'View Project';
 		$project = $this->project->with('user')->findOrFail($id);
-        //echo '<pre>'; print_r($project->toArray()); exit;
         $this->layout->content = View::make('projects.show', compact('project'));
 	}
 
@@ -99,9 +99,10 @@ class ProjectsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$project = $this->project->find($id);
+		$project = $this->project->with('users')->find($id);
+        $users = User::lists('first_name','id');
         //echo '<pre>'; print_r($project->toArray());exit;
-        $this->layout->content=  View::make('projects.edit', compact('project'));
+        $this->layout->content=  View::make('projects.edit', compact('project','users'));
 	}
 
 
@@ -115,8 +116,8 @@ class ProjectsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$this->project = $this->project->findOrFail($id);
 
+		$this->project = $this->project->findOrFail($id);
         if(!$this->project->fill($input = Input::all())->isValid($id)){
             Session::flash('message','Validation failed try again');
             return Redirect::back()->withInput()->withErrors($this->project->errors);
@@ -125,8 +126,10 @@ class ProjectsController extends \BaseController {
         if(!isset($input['Project']['is_active'])){
             $this->project->is_active = 0;
         }
-		$this->project->update($input);
-		return Redirect::route('projects.index');
+        //echo "<pre>"; print_r($input['user_id']);exit;
+        $this->project->update($input);
+        $this->project->users()->sync($input['user_id']);
+        return Redirect::route('projects.index');
 	}
 
 

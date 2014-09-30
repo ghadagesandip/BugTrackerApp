@@ -67,6 +67,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
 
+    public function projects(){
+        return $this->belongsToMany('Project');
+    }
+
+
     public function scopeGetProgrammerDesigner($query){
         return $query->where('role_id','>','0');
     }

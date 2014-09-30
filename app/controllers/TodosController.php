@@ -25,7 +25,7 @@ class TodosController extends \BaseController{
 
     public function create(){
         $this->layout->title="Add New Todo";
-        $projects = Project::active()->getProjectList();
+        $projects = Project::whereHas('users',function($q){$q->where('user_id','=',Auth::user()->id);})->active()->lists('name','id');
         $this->layout->content = View::make('Todos.create',compact('projects'));
     }
 

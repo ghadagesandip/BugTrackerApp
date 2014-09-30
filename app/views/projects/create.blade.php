@@ -37,6 +37,12 @@
             </div>
 
             <div class="form-group">
+                {{Form::label('user_id','User',array('class'=>'col-sm-2 control-label'))}}
+                <div class="col-sm-4">
+                    {{Form::select('user_id[]',$users,null,array('class'=>'form-control','multiple'=>true))}}
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-sm-offset-2">
                     {{Form::submit('Submit',array('class'=>'btn btn-primary'))}}
                     <a class="btn" href="{{URL::to('projects')}}">Cancel</a>

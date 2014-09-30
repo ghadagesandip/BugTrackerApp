@@ -5,12 +5,12 @@ class Todo extends \Eloquent{
 
     public $errors;
 
+    //valdiations
     public function rules($id){
         return [
             'title'=>'required|min:3|unique:todos,title,'.$id
         ];
     }
-
 
     public function isValid($id=null){
         $validator = Validator::make($this->attributes,$this->rules($id));
@@ -21,6 +21,10 @@ class Todo extends \Eloquent{
     }
 
 
+
+
+
+    //relationships
     public function user(){
         return $this->belongsTo('User');
     }
@@ -32,6 +36,8 @@ class Todo extends \Eloquent{
 
 
 
+
+    //scope functions
     public function scopeOwner($query,$userId){
         return $query->whereUserId($userId);
     }
