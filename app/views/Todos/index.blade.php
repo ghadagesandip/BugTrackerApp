@@ -28,8 +28,8 @@
                     <th>Id</th>
                     <th>Project</th>
                     <th>Title</th>
-                    <th class="col-sm-7">Description</th>
-                    <th>Option</th>
+                    <th>Description</th>
+                    <th class="col-sm-2">Option</th>
                 </tr>
                 </thead>
                 <tbody>

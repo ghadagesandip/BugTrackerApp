@@ -6,6 +6,8 @@ class TodosController extends \BaseController{
 
     protected $todo;
 
+    protected $statusArray = array('Pending', 'Completed');
+
     public function __construct(Todo $todo){
         parent::__construct();
         $this->beforeFilter('auth',array('except'=>array('getTodos','saveTodo','getTodo','updateTodo','deleteTodo')));
@@ -98,7 +100,9 @@ class TodosController extends \BaseController{
 
 
     public function getTodo($id=null){
-        $todo = $this->todo->find($id);
+        $todo = $this->todo->withProject()->find($id);
+
+        $todo['todo_status'] = $this->statusArray[$todo['todo_status']];
         return Response::JSON($todo);
     }
 

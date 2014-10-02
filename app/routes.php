@@ -38,12 +38,15 @@ Route::post('sendEmail','UsersController@sendForgotPasswordEmail');
 Route::get('/getRolesList','RolesController@getRolesList');
 Route::get('/getRole/{id}','RolesController@getRole');
 Route::post('savePost','RolesController@savePost');
+
 Route::get('/getTodos/{userId}','TodosController@getTodos');
 Route::post('/saveTodo','TodosController@saveTodo');
 Route::get('getTodo/{id}','TodosController@getTodo');
 Route::put('updateTodo/{id}','TodosController@updateTodo');
-Route::get('getAllActiveProjectListByUser/{userId}','ProjectsController@getAllActiveProjectListByUser');
 Route::delete('deleteTodo/{todoId}','TodosController@deleteTodo');
+
+Route::get('getAllActiveProjectListByUser/{userId}','ProjectsController@getAllActiveProjectListByUser');
+
 
 
 //hello

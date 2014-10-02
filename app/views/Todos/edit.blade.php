@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <ul class="breadcrumb">
                 <li><a href="{{URL::to('/dashboard')}}">Home</a></li>
-                <li><a href="{{URL::to('/todo')}}">Todo</a></li>
+                <li><a href="{{URL::to('/todos')}}">Todo</a></li>
                 <li>Uodate Todo</li>
             </ul>
         </div>
