@@ -9,8 +9,7 @@ class UsersController extends \BaseController{
     public function __construct(User $user){
         parent::__construct();
         $this->user = $user;
-        $this->beforeFilter('csrf', array('on' => 'post','PUT'));
-        $this->beforeFilter('auth',array('except' => array('login','authenticate','getUsers','forgotPassword','sendForgotPasswordEmail')));
+        $this->beforeFilter('auth',array('except' => array('login','authenticate','getUsers','forgotPassword','sendForgotPasswordEmail','signIn')));
     }
 
 
@@ -23,11 +22,6 @@ class UsersController extends \BaseController{
     }
 
 
-
-    public function getUsers(){
-        $users  = User::with('role')->get();
-        return Response::json($users);
-    }
 
 
 
@@ -179,5 +173,27 @@ class UsersController extends \BaseController{
             Session::flash('message','Could not detele user, please try again');
         }
         return Redirect::back();
+    }
+
+
+
+
+
+    public function getUsers(){
+        $users  = User::with('role')->get();
+        return Response::json($users);
+    }
+
+
+
+
+
+    public function signIn(){
+        if(Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))){
+            $user  = Auth::user();
+            return Response::json(array('user'=>$user,'login'=>true,'message'=>'loged in successfully'));
+        }else{
+            return Response::json(array('login'=>false,'message'=>'Invalid login credentials'));
+        }
     }
 }

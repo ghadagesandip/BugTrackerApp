@@ -153,8 +153,10 @@ class ProjectsController extends \BaseController {
 
 
     public function getAllActiveProjectListByUser($userId){
-        $projects = $this->project->active()->getProjectList();
+        $projects = $this->project->active()->select('id','name')->get();
         return Response::JSON($projects);
     }
+
+
 
 }

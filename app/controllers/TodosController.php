@@ -85,10 +85,21 @@ class TodosController extends \BaseController{
     }
 
 
-    public function getTodos($userId){
-        $todos = $this->todo->owner($userId)->get();
-        return Response::JSON($todos);
+
+
+
+    public function getTodos($userId,$projectId = null){
+        if($projectId==null){
+            $todos = $this->todo->owner($userId)->get();
+        }else{
+            $todos = $this->todo->owner($userId)->byProject($projectId)->get();
+        }
+
+        $projects = Project::whereHas('users',function($q){$q->where('user_id','=',Auth::user()->id);})->active()->lists('name','id');
+        $data = array('todos'=>$todos,'projects'=>$projects);
+        return Response::JSON($data);
     }
+
 
 
 

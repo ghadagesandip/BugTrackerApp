@@ -42,9 +42,4 @@ class Project extends \Eloquent {
     }
 
 
-    public function scopeByUser($query,$userId){
-        return $query->whereUserId($userId);
-    }
-
-
 }

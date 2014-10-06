@@ -39,6 +39,10 @@ class Todo extends \Eloquent{
         return $query->whereUserId($userId);
     }
 
+    public function scopeByproject($query,$projectId){
+        return $query->whereProjectId($projectId);
+
+    }
 
     public function scopeWithProject($query){
         return $query->with(array('project'=>function($query){
