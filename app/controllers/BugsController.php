@@ -35,7 +35,7 @@ class BugsController extends \BaseController {
         $assignTo = User::getProgrammerDesigner()->getList();
 
         $this->layout->title="Add Bug";
-    	$this->layout->content = View::make('bugs.create',compact('bugTypes','bugStatuses','assignTo'));
+    	$this->layout->content = View::make('bugs.create',compact('bugTypes','bugStatuses','assignTo','getAllBugs'));
 	}
 
 	/**
@@ -121,5 +121,13 @@ class BugsController extends \BaseController {
 
 		return Redirect::route('bugs.index');
 	}
+
+
+    public function getAllBugs($userId){
+        $bugs =   $this->bug->where('assigned_to','=',$userId)->get();
+        $projects = Project::byUser($userId)->active()->lists('name','id');
+        return Response::JSON(array('bugs'=>$bugs,'projects'=>$projects));
+    }
+
 
 }

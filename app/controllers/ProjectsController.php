@@ -175,4 +175,14 @@ class ProjectsController extends \BaseController {
         $project = $this->project->with(array('users','users.role'))->find($id);
         return Response::JSON($project);
     }
+
+
+    public function getProjectsAndbugStatusType($userId){
+        $projects = $this->project->byUser($userId)->active()->get(array('id','name'));
+        $bugtypes = BugType:: get(array('id','name'));
+        $bugstatuses = BugStatus::get(array('id','name'));
+        return Response::JSON(array('projects'=>$projects,'bugstatuses'=>$bugstatuses,'bugtypes'=>$bugtypes));
+    }
+
+
 }

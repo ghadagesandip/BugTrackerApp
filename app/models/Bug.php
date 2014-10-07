@@ -4,13 +4,7 @@ class Bug extends \Eloquent {
 
     protected $guarded = array('id','assigned_by');
 
-    public function bugStatus(){
-        return $this->belongsTo('BugStatus');
-    }
-
-
     public $errors = null;
-
 
     protected function rules($id){
         return [
@@ -39,6 +33,10 @@ class Bug extends \Eloquent {
         return $this->belongsTo('BugType');
     }
 
+
+    public function bugStatus(){
+        return $this->belongsTo('BugStatus');
+    }
 
 
     public function project(){

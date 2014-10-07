@@ -27,12 +27,13 @@ class BugStatus extends \Eloquent {
     }
 
 
-
-
     public static function getBugStatusList(){
         return static ::lists('name','id');
     }
 
 
+    public function scopeGetBugStatusList($query){
+        return $query->get('id','name');
+    }
 
 }

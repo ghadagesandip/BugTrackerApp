@@ -49,6 +49,8 @@ Route::get('getAllActiveProjectListByUser/{userId}','ProjectsController@getAllAc
 Route::post('sign-in','UsersController@signIn');
 Route::get('my-projects/{userId}','ProjectsController@myProjects');
 Route::get('get-project-details/{id}','ProjectsController@getProjectDetails');
+Route::get('get-all-bugs/{userId}','BugsController@getAllBugs');
+Route::get('getProjectsAndbugStatusType/{userId}','ProjectsController@getProjectsAndbugStatusType');
 
 
 

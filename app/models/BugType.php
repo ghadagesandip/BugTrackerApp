@@ -34,4 +34,9 @@ class BugType extends \Eloquent {
     }
 
 
+    public function scopeGetBugTypeList($query){
+        return $query->lists('id','name');
+    }
+
+
 }
