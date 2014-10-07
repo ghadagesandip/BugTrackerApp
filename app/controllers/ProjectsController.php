@@ -6,10 +6,11 @@ class ProjectsController extends \BaseController {
 
     protected $project;
 
-    public function __construct(Project $project){
+    protected $userId = null;
 
+    public function __construct(Project $project){
         $this->project = $project;
-        $this->beforeFilter('auth',array('except'=>array('getAllActiveProjectListByUser')));
+        $this->beforeFilter('auth',array('except'=>array('getAllActiveProjectListByUser','myProjects','getProjectDetails')));
         parent::__construct();
     }
 
@@ -152,6 +153,7 @@ class ProjectsController extends \BaseController {
 	}
 
 
+
     public function getAllActiveProjectListByUser($userId){
         $projects = $this->project->active()->select('id','name')->get();
         return Response::JSON($projects);
@@ -159,4 +161,18 @@ class ProjectsController extends \BaseController {
 
 
 
+
+    public function myProjects($userId){
+        $this->userId = $userId;
+        $projects = $this->project->byUser($userId)->active()->get();
+        return Response::JSON($projects);
+    }
+
+
+
+
+    public function getProjectDetails($id){
+        $project = $this->project->with(array('users','users.role'))->find($id);
+        return Response::JSON($project);
+    }
 }

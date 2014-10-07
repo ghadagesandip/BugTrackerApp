@@ -33,12 +33,18 @@ class Project extends \Eloquent {
         return $this->belongsToMany('User');
     }
 
+
     public function scopeActive($query){
         return $query->whereIsActive(1);
     }
 
+    public function scopebyUser($query,$userid){
+        $this->userid = $userid;
+        return $query->whereHas('users',function($q){$q->where('user_id','=',$this->userid);});
+    }
+
     public function scopeGetProjectList($query){
-        return $query->lists('name','id');
+        return $query->select('name','id');
     }
 
 

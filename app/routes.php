@@ -47,6 +47,8 @@ Route::put('updateTodo/{id}','TodosController@updateTodo');
 Route::delete('deleteTodo/{todoId}','TodosController@deleteTodo');
 Route::get('getAllActiveProjectListByUser/{userId}','ProjectsController@getAllActiveProjectListByUser');
 Route::post('sign-in','UsersController@signIn');
+Route::get('my-projects/{userId}','ProjectsController@myProjects');
+Route::get('get-project-details/{id}','ProjectsController@getProjectDetails');
 
 
 
