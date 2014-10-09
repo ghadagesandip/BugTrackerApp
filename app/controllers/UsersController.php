@@ -118,7 +118,8 @@ class UsersController extends \BaseController{
             Session::flash('message','Validation failed');
             return Redirect::back()->withErrors($this->user->errors)->withInput();
         }else{
-            $this->user->save();
+            Event::fire('auth.saveNewUser', array($this->user));
+            //$this->user->save();
             Session::flash('message','User created');
             return Redirect::to('/users');
         }

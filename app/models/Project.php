@@ -47,5 +47,8 @@ class Project extends \Eloquent {
         return $query->select('name','id');
     }
 
+    public function scopeGetFields($query){
+        $query->whereHas('users',function($q){$q->select('id','first_name');});
+    }
 
 }

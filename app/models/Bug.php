@@ -2,7 +2,7 @@
 
 class Bug extends \Eloquent {
 
-    protected $guarded = array('id','assigned_by');
+    protected $guarded = array('id');
 
     public $errors = null;
 
@@ -18,7 +18,7 @@ class Bug extends \Eloquent {
 
     public function isValid($id = null){
 
-        $this->attributes['expected_close_date'] = date('y-m-d',strtotime($this->attributes['expected_close_date']));
+        $this->attributes['expected_close_date'] = isset($this->attributes['expected_close_date']) ? date('y-m-d',strtotime($this->attributes['expected_close_date'])): '';
 
         $validate = Validator::make($this->attributes,$this->rules($id));
         if($validate->passes()) return true;
@@ -52,7 +52,7 @@ class Bug extends \Eloquent {
 
 
     public function assignedBy(){
-        return $this->belongsTo('User','assignedBy');
+        return $this->belongsTo('User','assigned_by');
     }
 
 

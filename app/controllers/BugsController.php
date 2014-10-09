@@ -7,6 +7,7 @@ class BugsController extends \BaseController {
     protected $bug;
 
     public function __construct(Bug $bug){
+        $this->beforeFilter('auth',array('except'=>array('addBug','getBugDetails')));
         $this->bug = $bug;
     }
 
@@ -124,10 +125,29 @@ class BugsController extends \BaseController {
 
 
     public function getAllBugs($userId){
-        $bugs =   $this->bug->where('assigned_to','=',$userId)->get();
+        $bugs =   $this->bug->with('bugType','bugStatus','assignedBy')->where('assigned_to','=',$userId)->orWhere('assigned_by', $userId)->get();
         $projects = Project::byUser($userId)->active()->lists('name','id');
+        //echo '<pre>'; print_r($bugs->toArray());exit;
         return Response::JSON(array('bugs'=>$bugs,'projects'=>$projects));
     }
 
 
+    public function addBug(){
+        //echo '<pre>'; print_r(Input::all());exit;
+        if(!$this->bug->fill(Input::all())->isValid()){
+            return Response::JSON(array('status'=>'failed','message'=>'validation error occured','errors'=>$this->bug->errors));
+        }else{
+            if($this->bug->save(Input::all())){
+                return Response::JSON(array('status'=>'success','message'=>'bug added to list'));
+            }else{
+                return Response::JSON(array('status'=>'failed','message'=>'failed to save'));
+            }
+        }
+    }
+
+
+    public function getBugDetails($id){
+        $bug = $this->bug->find($id);
+        return Response::JSON($bug);
+    }
 }

@@ -50,7 +50,10 @@ Route::post('sign-in','UsersController@signIn');
 Route::get('my-projects/{userId}','ProjectsController@myProjects');
 Route::get('get-project-details/{id}','ProjectsController@getProjectDetails');
 Route::get('get-all-bugs/{userId}','BugsController@getAllBugs');
-Route::get('getProjectsAndbugStatusType/{userId}','ProjectsController@getProjectsAndbugStatusType');
+Route::get('getProjectsAndbugType/{userId}','ProjectsController@getProjectsAndbugType');
+Route::post('add-bug','BugsController@addBug');
+Route::get('get-project-users/{projectId}','ProjectsController@getProjectUsers');
+Route::get('get-bug-details/{bugId}', 'BugsController@getBugDetails');
 
 
 

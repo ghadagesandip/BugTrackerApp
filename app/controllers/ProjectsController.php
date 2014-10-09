@@ -10,7 +10,7 @@ class ProjectsController extends \BaseController {
 
     public function __construct(Project $project){
         $this->project = $project;
-        $this->beforeFilter('auth',array('except'=>array('getAllActiveProjectListByUser','myProjects','getProjectDetails')));
+        $this->beforeFilter('auth',array('except'=>array('getAllActiveProjectListByUser','myProjects','getProjectDetails','getProjectsAndbugType','getProjectUsers')));
         parent::__construct();
     }
 
@@ -177,12 +177,21 @@ class ProjectsController extends \BaseController {
     }
 
 
-    public function getProjectsAndbugStatusType($userId){
+    public function getProjectsAndbugType($userId){
         $projects = $this->project->byUser($userId)->active()->get(array('id','name'));
         $bugtypes = BugType:: get(array('id','name'));
-        $bugstatuses = BugStatus::get(array('id','name'));
-        return Response::JSON(array('projects'=>$projects,'bugstatuses'=>$bugstatuses,'bugtypes'=>$bugtypes));
+        return Response::JSON(array('projects'=>$projects,'bugtypes'=>$bugtypes));
     }
 
+
+
+    public function getProjectUsers($projectId){
+        $users  = $this->project->find($projectId)->users()->get(array('users.id','first_name','last_name'));
+        $user1 = array();
+        foreach($users as $user){
+            array_push($user1,array('id'=>$user['id'],'name'=>$user['first_name']." ".$user['last_name']));
+        }
+        return Response::JSON($user1);
+    }
 
 }
