@@ -6,7 +6,7 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "fzaninotto/faker": "1.5.*@dev",
-        "way/generators": "dev-master"
+        "way/generators": "@stable"
 
 	},
 	"autoload": {
