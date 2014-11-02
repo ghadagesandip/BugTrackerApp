@@ -27,9 +27,9 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Role</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Role</th>
                     <th>Email</th>
                     <th>Gender</th>
                     <th class="col-sm-2">Option</th>
@@ -39,9 +39,9 @@
                 @foreach($users as $key => $user)
                 <tr>
                     <td>{{ $user->id }}</td>
-                    <td>{{ $user->role->name }}</td>
                     <td>{{ $user->first_name}}</td>
                     <td>{{ $user->last_name}}</td>
+                    <td>{{ $user->role->name }}</td>
                     <td>{{ $user->email}}</td>
                     <td>{{ $user->gender}}</td>
                     <td>

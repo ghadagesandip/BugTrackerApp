@@ -104,23 +104,33 @@ class TodosController extends \BaseController{
 
 
     public function saveTodo(){
-        $todo = $this->todo->create(Input::all());
-        return  Response::json($todo);
+
+        if(!$this->todo->fill(Input::all())->isValid()){
+            return Response::JSON(array('message'=>'Validation error occured','status'=>false));
+        }else{
+            if($this->todo->save()){
+                return Response::JSON(array('message'=>'Todo saved','status'=>true));
+            }else{
+                return Response::JSON(array('message'=>'Could not save todo, try again','status'=>false));
+            }
+        }
+
+
     }
 
 
 
-    public function getTodo($id=null){
+    public function getTodo($id=null,$userId=null){
+        $projects = Project::byUser($userId)->active()->get();
         $todo = $this->todo->withProject()->find($id);
-
         $todo['todo_status'] = $this->statusArray[$todo['todo_status']];
-        return Response::JSON($todo);
+        return Response::JSON(array('todo'=>$todo,'projects'=>$projects));
     }
 
 
 
     public function updateTodo($id){
-
+        //echo '<pre>'; print_r(Input::all());exit;
         if($this->todo->find($id)->update(Input::all())){
             return Response::JSON(array('message'=>'Todo updated'));
         }

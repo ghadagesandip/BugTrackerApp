@@ -42,7 +42,7 @@ Route::post('savePost','RolesController@savePost');
 Route::get('/getTodos/{userId}','TodosController@getTodos');
 Route::get('/getTodos/{userId}/{projectId}','TodosController@getTodos');
 Route::post('/saveTodo','TodosController@saveTodo');
-Route::get('getTodo/{id}','TodosController@getTodo');
+Route::get('getTodo/{id}/{userId}','TodosController@getTodo');
 Route::put('updateTodo/{id}','TodosController@updateTodo');
 Route::delete('deleteTodo/{todoId}','TodosController@deleteTodo');
 Route::get('getAllActiveProjectListByUser/{userId}','ProjectsController@getAllActiveProjectListByUser');
