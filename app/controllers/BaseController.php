@@ -3,9 +3,13 @@ class BaseController extends Controller {
 
     protected $title = null;
 
+
     public function __construct(){
         $this->title = Route::currentRouteName();
         View::share('title',$this->title);
+
+
+
     }
 
 
