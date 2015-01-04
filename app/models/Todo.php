@@ -36,7 +36,12 @@ class Todo extends \Eloquent{
 
     //scope functions
     public function scopeOwner($query,$userId){
-        return $query->whereUserId($userId);
+        try{
+            return $query->whereUserId($userId);
+        }catch (Exception $e){
+            echo 'exp';exit;
+        }
+
     }
 
     public function scopeByproject($query,$projectId){
