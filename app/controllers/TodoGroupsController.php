@@ -2,6 +2,24 @@
 
 class TodoGroupsController extends \BaseController {
 
+    public $layout = "layouts.default";
+
+
+    public function __construct(TodoGroup $todoGroup){
+        $this->beforeFilter('auth',array('except'=>array('getGroupList')));
+        $this->todoGroup = $todoGroup;
+        parent::__construct();
+    }
+
+
+
+    public function getGroupList(){
+        $data = array('status'=>true);
+        $data['list'] = $this->todoGroup->getlist();
+        return Response::JSON($data);
+    }
+
+
 	/**
 	 * Display a listing of the resource.
 	 * GET /todo_groups

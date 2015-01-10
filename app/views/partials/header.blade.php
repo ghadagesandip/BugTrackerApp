@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a href="#" class="navbar-brand">Welcome {{Session::get('user')->first_name}}</a>
+            <a href="#" class="navbar-brand">Welcome </a>
         </div>
         <div class="navbar-collapse collapse" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right">

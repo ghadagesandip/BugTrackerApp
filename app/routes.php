@@ -1,5 +1,8 @@
 <?php
 
+header('Access-Control-Allow-Origin: *  ');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -54,6 +57,8 @@ Route::get('getProjectsAndbugType/{userId}','ProjectsController@getProjectsAndbu
 Route::post('add-bug','BugsController@addBug');
 Route::get('get-project-users/{projectId}','ProjectsController@getProjectUsers');
 Route::get('get-bug-details/{bugId}', 'BugsController@getBugDetails');
+Route::get('get-todo-group','TodoGroupsController@getGroupList');
+Route::get('get-todo-priority','TodoPrioritiesController@getPriorityList');
 
 
 

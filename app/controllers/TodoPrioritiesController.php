@@ -2,6 +2,26 @@
 
 class TodoPrioritiesController extends \BaseController {
 
+    public function __construct(TodoPriority $todoPriority){
+        parent::__construct();
+        $this->todoPriority = $todoPriority;
+        $this->beforeFilter('auth',array('except'=>array('getPriorityList')));
+    }
+
+
+    public function getPriorityList(){
+        $data = array('status'=>false);
+
+        try{
+            $data['list'] =  $this->todoPriority->getTodoPriorities();
+            $data['status'] = 'success';
+        }catch (Exception $e){
+            $data['error'] = $e->getMessage();
+        }
+
+        return Response::json($data);
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 * GET /todopriorities

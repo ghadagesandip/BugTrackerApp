@@ -1,7 +1,7 @@
 <?php
 class Todo extends \Eloquent{
 
-    public $fillable = ['title','description','project_id','todo_date','todo_status','user_id'];
+    public $fillable = ['title','description','project_id','todo_date','todo_status','user_id','group_id','priority_id'];
 
     public $errors;
 

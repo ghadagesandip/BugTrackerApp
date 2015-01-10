@@ -164,8 +164,20 @@ class ProjectsController extends \BaseController {
 
     public function myProjects($userId){
         $this->userId = $userId;
-        $projects = $this->project->byUser($userId)->active()->get();
-        return Response::JSON($projects);
+        $data = array('status'=>false);
+        try{
+            $projects = $this->project->byUser($userId)->active()->get();
+            $todogroups = TodoGroup::grouplist();
+            $todoPriority = TodoPriority::getPriorities();
+            $data['status'] =true;
+            $data['data'] = array('projects'=>$projects,'todogroups'=>$todogroups,'todoPriority'=>$todoPriority);
+        }catch (Exception $e){
+            $data['error'] = $e->getMessage();
+            $data['data'] = array();
+        }
+
+
+        return Response::JSON($data);
     }
 
 
