@@ -34,6 +34,14 @@ class Todo extends \Eloquent{
         return $this->belongsTo('Project');
     }
 
+    public function priority(){
+        return $this->belongsTo('TodoPriority');
+    }
+
+    public function group(){
+        return $this->belongsTo('TodoGroup');
+    }
+
     //scope functions
     public function scopeOwner($query,$userId){
         try{
@@ -54,4 +62,18 @@ class Todo extends \Eloquent{
             $query->select('id','name');
         }));
     }
+
+    public function scopeWithPriority($query){
+        return $query->with(array('priority'=>function($query){
+            $query->select('id','name');
+        }));
+    }
+
+    public function scopeWithGroup($query){
+        return $query->with(array('group'=>function($query){
+            $query->select('id','name');
+        }));
+    }
+
+
 }

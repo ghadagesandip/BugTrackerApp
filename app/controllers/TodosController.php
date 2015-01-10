@@ -99,7 +99,8 @@ class TodosController extends \BaseController{
         $projects = Project::byUser($userId)->active()->select('name','id')->get();
         $todogroups = TodoGroup::grouplist();
         $todoPriorities = TodoPriority::getPriorities();
-        $todo = $this->todo->withProject()->find($id);
+
+        $todo = $this->todo->withProject()->withPriority()->withGroup()->find($id);
         $todo['todo_status'] = $this->statusArray[$todo['todo_status']];
         return Response::JSON(array('todo'=>$todo,'projects'=>$projects,'todogroups'=>$todogroups,'todoPriorities'=>$todoPriorities));
     }
