@@ -33,6 +33,13 @@
                     </div>
                 </div>
 
+                 <div class="form-group">
+                     {{Form::label('todo_date','Todo Date',array('class'=>'col-sm-2 control-label'))}}
+                     <div class="col-sm-4">
+                         <input type="text" class="datepicker"/>
+                     </div>
+                 </div>
+
                 <div class="form-group">
                     {{Form::label('description','Description',array('class'=>'col-sm-2 control-label'))}}
                     <div class="col-sm-4">
@@ -52,6 +59,6 @@
              {{Form::close()}}
          </div>
     </div>
-
-
 @stop
+
+

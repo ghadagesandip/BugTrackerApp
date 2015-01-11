@@ -1,7 +1,7 @@
 <?php
 class Todo extends \Eloquent{
 
-    public $fillable = ['title','description','project_id','todo_date','todo_status','user_id'];
+    public $fillable = ['title','description','project_id','todo_date','todo_status','user_id','group_id','priority_id'];
 
     public $errors;
 
@@ -34,9 +34,22 @@ class Todo extends \Eloquent{
         return $this->belongsTo('Project');
     }
 
+    public function priority(){
+        return $this->belongsTo('TodoPriority');
+    }
+
+    public function group(){
+        return $this->belongsTo('TodoGroup');
+    }
+
     //scope functions
     public function scopeOwner($query,$userId){
-        return $query->whereUserId($userId);
+        try{
+            return $query->whereUserId($userId);
+        }catch (Exception $e){
+            echo 'exp';exit;
+        }
+
     }
 
     public function scopeByproject($query,$projectId){
@@ -49,4 +62,18 @@ class Todo extends \Eloquent{
             $query->select('id','name');
         }));
     }
+
+    public function scopeWithPriority($query){
+        return $query->with(array('priority'=>function($query){
+            $query->select('id','name');
+        }));
+    }
+
+    public function scopeWithGroup($query){
+        return $query->with(array('group'=>function($query){
+            $query->select('id','name');
+        }));
+    }
+
+
 }
