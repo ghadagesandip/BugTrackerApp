@@ -69,15 +69,18 @@ class TodosController extends \BaseController{
 
     public function getTodos($userId,$projectId = null){
 
+        $this->userId = $userId;
+
         if($projectId==null){
-            $todos = $this->todo->owner($userId)->get();
+            $todos = $this->todo->owner($userId)->withProject()->withPriority()->withgroup()->get();
         }else{
-            $todos = $this->todo->owner($userId)->byProject($projectId)->get();
+            $todos = $this->todo->owner($userId)->byProject($projectId)->withProject()->withPriority()->withgroup()->get();
         }
 
         $projects = Project::whereHas('users',function($q){$q->where('user_id','=',$this->userId);})->active()->lists('name','id');
+
         $data = array('todos'=>$todos,'projects'=>$projects);
-        $data = array('todos'=>$todos);
+
 
         return Response::JSON($data);
     }
