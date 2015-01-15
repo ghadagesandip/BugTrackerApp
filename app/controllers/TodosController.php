@@ -72,9 +72,9 @@ class TodosController extends \BaseController{
         $this->userId = $userId;
 
         if($projectId==null){
-            $todos = $this->todo->owner($userId)->withProject()->withPriority()->withgroup()->get();
+            $todos = $this->todo->owner($userId)->withProject()->withPriority()->withGroup()->get();
         }else{
-            $todos = $this->todo->owner($userId)->byProject($projectId)->withProject()->withPriority()->withgroup()->get();
+            $todos = $this->todo->owner($userId)->byProject($projectId)->withProject()->withPriority()->withGroup()->get();
         }
 
         $projects = Project::whereHas('users',function($q){$q->where('user_id','=',$this->userId);})->active()->lists('name','id');
