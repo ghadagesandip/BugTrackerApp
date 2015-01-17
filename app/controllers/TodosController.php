@@ -12,11 +12,23 @@ class TodosController extends \BaseController{
         $this->todo = $todo;
     }
 
+
+
+
     public function index(){
+
         $this->layout->title ="Todo";
-        $todos = $this->todo->owner(Auth::user()->id)->paginate();
+        try{
+            $todos = $this->todo->owner(Auth::user()->id)->withProject()->paginate();   
+            
+        }catch(Exception $e){
+            echo 'error occured';exit;
+        }
+               
         $this->layout->content = View::make('Todos.index',compact('todos'));
     }
+
+
 
 
     public function create(){
@@ -24,6 +36,9 @@ class TodosController extends \BaseController{
         $projects = Project::whereHas('users',function($q){$q->where('user_id','=',Auth::user()->id);})->active()->lists('name','id');
         $this->layout->content = View::make('Todos.create',compact('projects'));
     }
+
+
+
 
     public function store(){
         if(!$this->todo->fill($data = Input::all())->isValid()){
@@ -76,12 +91,9 @@ class TodosController extends \BaseController{
         }else{
             $todos = $this->todo->owner($userId)->byProject($projectId)->withProject()->withPriority()->withGroup()->get();
         }
-
         $projects = Project::whereHas('users',function($q){$q->where('user_id','=',$this->userId);})->active()->lists('name','id');
 
         $data = array('todos'=>$todos,'projects'=>$projects);
-
-
         return Response::JSON($data);
     }
 

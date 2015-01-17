@@ -127,7 +127,7 @@ class BugsController extends \BaseController {
     public function getAllBugs($userId){
         $bugs =   $this->bug->with('bugType','bugStatus','assignedBy')->where('assigned_to','=',$userId)->orWhere('assigned_by', $userId)->get();
         $projects = Project::byUser($userId)->active()->lists('name','id');
-        //echo '<pre>'; print_r($bugs->toArray());exit;
+        
         return Response::JSON(array('bugs'=>$bugs,'projects'=>$projects));
     }
 

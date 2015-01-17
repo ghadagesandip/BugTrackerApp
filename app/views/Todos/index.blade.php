@@ -36,7 +36,7 @@
                     @foreach($todos as $todo)
                     <tr>
                         <td>{{$todo->id}}</td>
-                        <td>{{$todo->project->name}}</td>
+                        <td>{{$todo->project->name or "not mentioned" }}</td>
                         <td>{{$todo->title}}</td>
                         <td>{{$todo->description}}</td>
                         <td>

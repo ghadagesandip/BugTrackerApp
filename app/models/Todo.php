@@ -5,6 +5,14 @@ class Todo extends \Eloquent{
 
     public $errors;
 
+    public static function boot(){
+        parent::boot();
+
+        static::creating(function($todo_data){
+            
+        });
+    }
+
     //valdiations
     public function rules($id){
         return [
@@ -19,8 +27,6 @@ class Todo extends \Eloquent{
         $this->errors = $validator->messages();
         return false;
     }
-
-
 
 
 
